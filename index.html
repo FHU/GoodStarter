@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <link href="css/normalize.css" rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link  href="css/modal.css" rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel='stylesheet' type='text/css'>
+    <script src="js/modernizr.custom.js"></script>
+</head>
+
+<body>
+    
+    <div class="md-modal md-effect-1" id="modal-1">
+                    <div class="md-content">
+                        <h3>Meet Need</h3>
+                        <div>
+                            <h4>Connect and Help </h4>
+                            <label>email
+                                <br />
+                                <input type="text" name="email" id="email" placeholder="email@gmail.com"/>
+                            </label>
+                            
+                            <label>message
+                                <br />
+                                <textarea name="message" id="message"  placeholder="I want to help you!" > </textarea>
+                            </label>
+
+                            <button class="md-close beautifulButton"> Send </button>
+                            
+                            
+                            <button class="md-close cancelButton"> cancel </button>
+                        </div>
+                    </div>
+                </div>
+    
+    <div class="globalContainer" > 
+
+    <!--<div class="wrapper"> -->
+    <header>
+
+        <a id="logo" href="#"> <b>Good</b>Starter</a>
+        <nav>
+            <ul>
+                <li> <a href="#">Share a Need </a>
+                </li>
+                <li> <a href="#">Meet a Need </a>
+                </li>
+                <li> <a href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <a id="userName" href="#"> Kenan Casey </a> 
+
+    </header>
+
+    <div class="container">
+        <section id="description">
+
+            <h1> A Place to Stay Over Thanksgiving Break </h1>
+
+            <div class="twoThirdsCol">
+
+                <div id="authorInfo">
+                    <img src="img/josh-smith.jpg" width="50px" />
+                    <h2> Josh Smith </h2>
+
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/facebook31.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/twitter20.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/new51.png" />
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <ul id="tags">
+                    <li>Personal</li>
+                    <li>Physical</li>
+                </ul>
+
+                <div class="video">
+                    <iframe width="600" height="400" src="//www.youtube.com/embed/01TL9bUWr6I" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+
+            </div>
+
+            <div class="oneThirdCol">
+                <ul id="stats">
+                    <li> <span class="bigNumber"> 2 </span>
+                        <span class="statDescription"> need meeters </span>
+                    </li>
+                    <li> <span class="bigNumber"> 9 </span>
+                        <span class="statDescription"> days to go </span>
+                    </li>
+                    <li> <span class="bigNumber"> 14 </span> 
+                        <img src="img/star138.png">
+                        <span class="statDescription"> watching </span>
+                    </li>
+                </ul>
+
+                <a class="beautifulButton md-trigger" data-modal="modal-1" href="#"> Meet Need</a>
+
+                
+
+            </div>
+
+        </section>
+    </div>
+
+    <div class="md-overlay"></div>
+    <!-- the overlay element -->
+
+    <!--<div class="push"></div> -->
+
+    <!--</div> -->
+    <footer>
+        <div class="container">
+
+            <div class="fl">
+
+                <p>&copy; 2014 GoodStarter
+                    <br /> <a href="#">Feedback</a> 
+                </p>
+
+            </div>
+
+            <div class="fr">
+                <p>Freed-Hardeman University
+                    <br />Henderson, TN</p>
+                <img src="img/fhu_logo.png" />
+            </div>
+        </div>
+    </footer>
+
+    </div> <!-- end globalContainer --> 
+    
+    <div class="md-overlay"> </div>
+    <!-- the overlay element -->
+
+    <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+    <script src="js/classie.js"></script>
+    <script src="js/modalEffects.js"></script>
+
+    <!-- for the blur effect -->
+    <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+    <script>
+        // this is important for IEs
+        var polyfilter_scriptpath = '/js/';
+    </script>
+    <script src="js/cssParser.js"></script>
+    <script src="js/css-filters-polyfill.js"></script>
+
+</body>
+
+</html>
