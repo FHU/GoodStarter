@@ -44,15 +44,19 @@
     <!--<div class="wrapper"> -->
     <header>
 
-        <a id="logo" href="#"> <b>Good</b>Starter</a>
+        <a id="logo" href="index.html"> <b>Good</b>Starter</a>
         <nav>
             <ul>
-                <li> <a href="#">Share a Need </a>
+                <li>
+                    <a href="#">Share a Need </a>
                 </li>
-                <li> <a href="#">Meet a Need </a>
+                <li>
+                    <a href="#">Meet a Need </a>
                 </li>
-                <li> <a href="#">About</a>
+                <li>
+                    <a href="#">About</a>
                 </li>
+
             </ul>
         </nav>
 
@@ -61,7 +65,15 @@
 
     </header>
 
+    
+    
     <div class="container">
+        
+        <form action="#">
+            <input type="search" id="search" placeholder="Search needs" />
+            <input type="submit" id="submit" />
+        </form>
+        
         <section id="description">
 
             <h1> A Place to Stay Over Thanksgiving Break </h1>
@@ -92,8 +104,6 @@
 
                 </div>
 
-               <p> I'm stuck at Freed over Thanksgiving break. Can someone give me a place to stay? </p>
-               
                 <ul id="tags">
                     <li>Personal</li>
                     <li>Physical</li>
@@ -124,8 +134,60 @@
                 
 
             </div>
+            
+            <div id="categories">
+                <ul>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Clothing</a></li>
+                    <li><a href="#">Shelter</a></li>
+                    <li><a href="#">Friendship</a></li>
+                    <li><a href="#">Occupation</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Recreation</a></li>
+                    <li><a href="#">Religious</a></li>
+                    <li><a href="#">Other</a></li>
+                </ul>
+            </div>  
 
         </section>
+        
+        
+        
+        <section id="popular">
+            <h2>Popular</h2>
+            <div class="popular-box">
+                <a href="#"><img src="img/books.jpg" alt="something1"/></a>
+                <h4><a href="#">Need Texbook</a></h4>
+                <p>by Spencer Christian</p>
+                <p>It's been 3 months and the bookstore still hasn't received my C++ book!  Can I borrow/buy someone's this semester?</p>
+            </div>
+            <div class="popular-box">
+                <a href="#"><img src="img/lamborgini.jpg" alt="something1"/></a>
+                <h4><a href="#">Need Mechanic</a></h4>
+                <p>by Tyler Estes</p>
+                <p>I'm having issues with my car.  The other day it caught on fire.  Please help me.</p>
+            </div>            
+            <div class="popular-box">
+                <a href="#"><img src="img/thanksgiving.jpg" alt="something1"/></a>
+                <h4><a href="#">Place to Stay for Thanksgiving</a></h4>
+                <p>by Josh Smith</p>
+                <p>I need a place to stay during Thanksgiving break.  I'll pay for any expenses and clean up after myself.</p>
+            </div>            
+        </section>
+        
+        <section id="social">
+            <h2>Tell others about GoodStarter!</h2>
+            <p>Discover and fulfill needs with friends!</p>
+            <a href="#">Connect with Facebook</a>
+        </section>        
+        
+        <section id="learnMore">
+            <h2>Want to know more?</h2>
+            <p>Each GoodStarter need is an independent creation of someone like you!</p>
+            <a href="#">Learn More</a>
+        </section>
+        
+        
     </div>
 
     <div class="md-overlay"></div>
@@ -143,8 +205,10 @@
                     <br /> <a href="#">Feedback</a> 
                 </p>
 
-            </div>
-
+            </div>           
+            
+            
+            
             <div class="fr">
                 <p>Freed-Hardeman University
                     <br />Henderson, TN 38340</p>
@@ -153,6 +217,8 @@
         </div>
     </footer>
 
+    
+    
     </div> <!-- end globalContainer --> 
     
     <div class="md-overlay"> </div>

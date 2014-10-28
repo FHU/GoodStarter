@@ -103,11 +103,11 @@ nav ul li a:hover {
 }*/
 
 .twoThirdsCol {
-    width: 66%;
+    width: 55%;
     float: left;
 }
 .oneThirdCol {
-    width: 33%;
+    width: 25%;
     float: left;
 }
 #authorInfo {
@@ -154,7 +154,6 @@ nav ul li a:hover {
 }
 
 .video {
-    clear:both;
   position: relative;
   width: 95%;
   height: 0;
@@ -177,12 +176,12 @@ nav ul li a:hover {
 }
 
 #stats li {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     
 }
 
 #stats .bigNumber {
-    font-size: 4em;
+    font-size: 2.5em;
     font-weight: 700;
     
 }
@@ -212,8 +211,8 @@ nav ul li a:hover {
     letter-spacing: 1px;
 
     width:100%;
-    height: 3em;
-    line-height: 3em;
+    height: 2em;
+    line-height: 2em;
     outline: none;	
 }
 
@@ -264,6 +263,11 @@ textarea {
     clear: both;
 }
 
+#description{
+    display: block;
+    overflow: auto;
+}
+
 /*footer, .push {
      height: 70px;
 }*/
@@ -276,7 +280,7 @@ footer {
     
     background: #D9D8B9;
     width: 100%;
-    height: 70px;
+    overflow: auto;
 }
 
 footer p {
@@ -297,11 +301,188 @@ footer a:hover {
 
 .fr {
     float:right;  
-    width: 40%;
+    width: 20%;
     text-align: right;
 }
 
 .fl {
     float:left;
-    width: 40%;
+    width: 20%;
+}
+
+
+/* --------------- CATEGORIES --------------- */
+
+/* --- search / buttons --- */
+#search{
+    width: 70%;
+}
+
+#submit{
+    background: #579F7B;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-top: 20px;
+    border:2px solid #579F7B;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width:15%;
+    transition: all 0.2s ease
+
+}
+
+#submit:hover{
+    background: #AFD8CC;
+    border:2px solid #AFD8CC;
+}
+.buttonRow{
+    width: 100%;
+    overflow: auto;
+}
+
+
+#categories{
+    float: left;
+    width: 10%;
+    margin-left: 10px;
+}
+
+#categories ul{
+    padding: 0;
+    padding-left: 12px;
+    list-style-type: none;
+    border-left: 1px solid #d5cccf;
+}
+
+#categories ul li{
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#categories ul li a{
+    text-decoration: none;
+    color: #579F7B;
+}
+
+#categories ul li a:hover{
+    color: #5A5551;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #5A5551;
+}
+
+
+/* -------------- POPULAR ------------------*/
+
+#popular{
+    display: block;
+    border-top: 1px solid #d5cccf;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.popular-box{
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+    width: 250px;
+    height: 400px;
+    border: 1px solid #d5cccf;
+    border-radius: 15px;
+}
+
+.popular-box p{
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #5A5551;
+}
+
+.popular-box h4 a{
+    text-decoration: none;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.popular-box a img{
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#learnMore{
+    text-align: center;
+    background-color: #AFD8CC;
+    padding: 5px;
+    width: 90%;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+#learnMore p{
+    color: #5A5551;
+}
+
+#learnMore a{
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-decoration: none;
+    color: #F3F1F2;
+    background-color: #579F7B;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+
+}
+
+#learnMore a:hover{
+    background-color: #2d513f;
+    transition: all 0.4s ease;
+}
+
+#social{
+    text-align: center;
+    background-color: #a4d0e3;
+    padding: 5px;
+    width: 90%;
+    height: 200px;
+    margin-bottom: 30px;
+
+}
+
+#social p{
+    color: #5A5551;
+}
+
+#social a{
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-decoration: none;
+    color: #F3F1F2;
+    background-color: #438cb4;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+
+}
+
+#social a:hover{
+    background-color: #2c4b76;
+    transition: all 0.4s ease;
 }
