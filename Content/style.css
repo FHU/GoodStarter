@@ -14,8 +14,12 @@ body {
 }
 
 .wrapper {
-    min-height:100%;
-    margin:  0 auto;
+    margin: 0 auto;
+}
+
+.center-heading {
+    text-align: center;
+    margin: 0 auto;
 }
 
 .logo {
@@ -529,18 +533,14 @@ footer {
 /* -------------- POPULAR ------------------*/
 
 #popular{
-    display: block;
     border-top: 1px solid #d5cccf;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin:  0 auto;
     overflow: auto;
 }
 
 .popular-box{
-    float: left;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 30px;
+    display:  inline-block;
+    margin:  0 40px;
     width: 250px;
     height: 400px;
     border: 1px solid #d5cccf;
@@ -569,6 +569,7 @@ footer {
 }
 
 #learnMore{
+    margin:  0 auto;
     text-align: center;
     background-color: #AFD8CC;
     padding: 5px;
@@ -577,7 +578,7 @@ footer {
     margin-bottom: 30px;
 }
 
-#learnMore p{
+#learnMore p {
     color: #5A5551;
 }
 
@@ -608,15 +609,14 @@ footer {
     padding: 5px;
     width: 90%;
     height: 200px;
-    margin-bottom: 30px;
-
+    margin:  30px auto;
 }
 
 #social p{
     color: #5A5551;
 }
 
-#social a{
+#social a {
     font-weight: bold;
     display: inline-block;
     margin-top: 15px;
@@ -637,7 +637,15 @@ footer {
     transition: all 0.4s ease;
 }
 
-.center-heading {
-    text-align:  center;
-    margin:  0 auto;
+/*.start-good {
+    background: #27AE60;
+}
+
+.start-good:hover {
+    background-color: #239C56;
+    transition: all 0.4s ease;
+}*/
+
+.popular-container {
+    margin: 0 auto;
 }
