@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>GoodStarter | @Page.Title</title>
+        <link href="~/Content/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="~/Scripts/app.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.8.24.js"></script>
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>
+        <header>
+            <nav class="clear">
+                <div class="logo">GoodStarter <i class="fa fa-leaf"></i>
+                </div>
+                <ul class="clear">
+                    <li><a href="~/Share.cshtml">Share</a>
+                    </li>
+                    <li><a href="#">Find</a>
+                    </li>
+                    <li><a href="#">Do Good</a>
+                    </li>
+                    <li><input id="search-bar" />
+                    </li>
+                </ul>
+                <div id="user-menu"><i class="fa fa-user"></i>Jesse</div>
+                <a href="#" id="pull">GoodStarter <i class="fa fa-bars"></i></a>
+            </nav>
+        </header>
+        @RenderBody()
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - GoodStarter | Start Something Good</p>
+                </div>
+            </div>
+        </footer>
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>
