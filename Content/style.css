@@ -13,6 +13,11 @@ body {
     background: url("https://d107cgb5lgj7br.cloudfront.net/img/backgrounds/noise-grey.v1.png");
 }
 
+h1, h2, h3 {
+    
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
 .wrapper {
     margin: 0 auto;
 }
@@ -25,8 +30,7 @@ body {
 .logo {
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 9px;
-    font-size: 1.8em;
+    font-size: 1.0em;
     font-weight: 600;
     float: left;
     color: #ecf0f1;
@@ -102,6 +106,7 @@ nav a {
 nav a:hover {
     background-color: #239C56;
 }
+
 
 #search-bar {
     -webkit-box-sizing: border-box;
@@ -536,12 +541,15 @@ footer {
     border-top: 1px solid #d5cccf;
     margin:  0 auto;
     overflow: auto;
+    padding:  20px;
 }
 
 .popular-box{
     display:  inline-block;
-    margin:  0 40px;
-    width: 250px;
+    float: left;
+    margin-right: 40px;
+    max-width: 250px;
+    width:  24%;
     height: 400px;
     border: 1px solid #d5cccf;
     border-radius: 15px;
@@ -561,8 +569,9 @@ footer {
 }
 
 .popular-box a img{
-    width: 250px;
-    height: 150px;
+    max-width: 250px;
+    width: 100%;
+    
     border-radius: 15px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -648,4 +657,42 @@ footer {
 
 .popular-container {
     margin: 0 auto;
+}
+
+.buttonRow{
+    width: 100%;
+    overflow: auto;
+}
+
+.oneThirdsCol a{
+    text-align: center;
+    font-size: 1.5em;
+    float: left;
+    width: 24%;
+    background-color: #F3F1F2;
+    border:1px solid #27ae60;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 40px;
+    margin-top: 40px;
+    text-decoration: none;
+    color: #27ae60;
+    transition: all 0.5s ease
+}
+
+.oneThirdsCol a:hover{
+    color: #F3F1F2;
+    background-color: #27ae60;
+    border:1px solid #F3F1F2;
+}
+
+.oneThirdsCol a strong {
+    font-size: 1.2em;
+    font-weight: 300;
+    
+}
+
+.oneThirdsCol a:hover strong {
+    
 }

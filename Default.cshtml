@@ -1,16 +1,32 @@
 ﻿@{
     Layout = "~/_SiteLayout.cshtml";
     Page.Title = "Start Something Good";
+
+    var db = Database.Open("GoodStarter");
+
+    var popularNeeds = db.Query("SELECT Need.NeedTitle, Need.CreatorID, Need.Description, Need.ImagePath, UserProfile.FirstName, UserProfile.LastName FROM Need JOIN UserProfile ON Need.CreatorID = UserProfile.UserID"); 
+    var popular1 = popularNeeds.ElementAt(0); 
+
+    var categoryIDs = db.Query("SELECT CategoryID from Category");
+
+    Dictionary<string, int > categoryNamesCounts = new Dictionary<string, int>();
+
+    foreach(var row in categoryIDs) 
+    {
+       var categoryName = db.QueryValue("Select Name from Category WHERE CategoryID=@0", row.CategoryID);
+       var categoryCount = db.QueryValue("SELECT count(*) as c FROM Need_Category WHERE CategoryID=@0", row.CategoryID);
+       categoryNamesCounts.Add(categoryName, categoryCount );
+    }
 }
 
-            <h1 class="center-heading">Start Something Good</h1>
+        <h1 class="center-heading">Start Something Good</h1>
         <div id="popular">
-            <h2 class="center-heading">Popular</h2>
+            <h2 class="">Popular Needs</h2>
             <div class="popular-box">
-                <a href="#"><img src="~/Images/books.jpg" alt="something1"/></a>
-                <h4><a href="#">Need Texbook</a></h4>
-                <p>by Spencer Christian</p>
-                <p>It's been 3 months and the bookstore still hasn't received my C++ book!  Can I borrow/buy someone's this semester?</p>
+                <a href="#"><img src="~/Images/@popular1.ImagePath" alt="something1"/></a>
+                <h4><a href="#">@popular1.NeedTitle</a></h4>
+                <p> @popular1.FirstName @popular1.LastName </p>
+                <p>@popular1.Description</p>
             </div>
             <div class="popular-box">
                 <a href="#"><img src="~/Images/lamborgini.jpg" alt="something1"/></a>
@@ -24,6 +40,52 @@
                 <p>by Josh Smith</p>
                 <p>I need a place to stay during Thanksgiving break.  I'll pay for any expenses and clean up after myself.</p>
             </div>          
+        </div>
+
+        <div id="categoryGrid"  >
+        <!-- physical needs -->
+
+            
+            <div class="buttonRow">
+                @foreach ( var categoryName in categoryNamesCounts.Keys) 
+                {
+                <div class="oneThirdsCol">
+                    <a href="#" > @categoryName <br /> <strong>@categoryNamesCounts[categoryName]</strong></a>
+                </div>
+                }
+            </div>
+            
+            <!-- emotional needs -->
+            <!--<div class="buttonRow">
+                <div class="oneThirdsCol">
+                    <a href="#">Friendship <br /> <strong>4</strong></a>
+                </div>
+                
+                <div class="oneThirdsCol">
+                    <a href="#">Occupation <br /> <strong>4</strong></a>
+                </div>
+                
+                <div class="oneThirdsCol">
+                    <a href="#">Education <br /> <strong>4</strong></a>
+                </div>
+            </div> -->
+            
+            <!-- social needs -->
+            <!--<div class="buttonRow">
+                <div class="oneThirdsCol">
+                    <a href="#">Recreation <br /> <strong>4</strong></a>
+                </div>
+                
+                <div class="oneThirdsCol">
+                    <a href="#">Religious <br /> <strong>4</strong></a>
+                </div>
+                
+                <div class="oneThirdsCol">
+                    <a href="#">Other <br /> <strong>4</strong></a>
+                </div>
+            </div>
+            -->
+        
         </div>
         
         <section id="social">
