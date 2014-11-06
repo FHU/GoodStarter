@@ -649,3 +649,32 @@ footer {
 .popular-container {
     margin: 0 auto;
 }
+
+
+.buttonRow{
+    width: 100%;
+    overflow: auto;
+}
+
+.oneThirdsCol a{
+    text-align: center;
+    font-size: 1.5em;
+    float: left;
+    width: 24%;
+    background-color: #F3F1F2;
+    border:1px solid #579F7B;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #579F7B;
+    transition: all 0.8s ease
+}
+
+.oneThirdsCol a:hover{
+    color: #F3F1F2;
+    background-color: #579F7B;
+    border:1px solid #F3F1F2;
+}
