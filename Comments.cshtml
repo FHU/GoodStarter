@@ -3,21 +3,46 @@
     Page.Title = "Comments";    
 }
 
-                    <div class="commentsBox">
-                        <div class="userComments">
-                            <img class="commentPic" src="img/jaimeleonard.jpg" alt="comment picture"/>
-                            <p>My name is Jaime Leonard. I can help! Message me and we can work something out.</p>
-                            <div class="beautifulButton">Reply</div>
-                        </div>
-                        <div class="userComments">
-                            <img class="commentPic" src="img/tyler.estes.jpg" alt="comment picture" />
-                            <p>I'm Tyler Estes. I can help too. Let's get together soon.</p>
-                            <div class="beautifulButton">Reply</div>
-                        </div>
-                        <div class="userComments">
-                            <img class="commentPic" src="img/jonathan.young.jpg" alt="comment picture" />
+        <div class="comments-container">
+            <div class="row">
+                <h1 class="page-title">A Place to Stay Over Thanksgiving Break</h1>
+            </div>
+            <div class="row need-nav">
+                <ul class="col-md-12">
+                    <li><a  href="ViewNeed.cshtml"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li><a href="Comments.cshtml"><i class="fa fa-pencil-square-o"></i> Comments</a>
+                    </li>
+                    <li><a href="Updates.cshtml"><i class="fa fa-cloud-upload"></i> Updates</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="user-comment">
+                        <img class="comment-img float-left" src="img/jaimeleonard.jpg" alt="comment picture" />
+                        <p>My name is Jaime Leonard. I can help! Message me and we can work something out.</p>
+                        <div class="reply-button float-right">Reply</div>
+                    </div>
+                    <div class="user-comment">
+                        <img class="comment-img float-left" src="img/tyler.estes.jpg" alt="comment picture" />
+                        <p>I'm Tyler Estes. I can help too. Let's get together soon.</p>
+                        <div class="reply-button float-right">Reply</div>
+                    </div>
+                    <div class="user-comment">
+                        <img class="comment-img float-left" src="img/jonathan.young.jpg" alt="comment picture" />
+                        <p>I'm Jonathan Young. I don't know what's going on.</p>
+                        <div class="reply-button float-right">Reply</div>
+                    </div>
                 </div>
-
-            </section>
+                <div class="col-md-5">
+                    <div class="need-stats">
+                        <h4><span class="stat-num">2</span> Need Meeters</h4>
+                        <h4><span class="stat-num">9</span> Days to Go</h4>
+                        <h4><span class="stat-num">14</span> Watching</h4>
+                        <div class="meet-need-button">Meet Need</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    /* Function to stretch navbar at screen top */
     $(window).scroll(function(){
         console.log($(document).scrollTop());
         
