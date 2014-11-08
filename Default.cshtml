@@ -17,49 +17,80 @@
         
         categoryNameCounts.Add(categoryName, categoryCount);
     }
-
 }
-        <h1 class="center-heading">Start Something Good</h1>
-        <div id="popular">
-            <h2 class="center-heading">Popular</h2>
-            <div class="popular-box">
-                <a href="#"><img src="~/Images/@mostPopularNeed.ImageName" alt="something1"/></a>
-                <h4><a href="#"> @mostPopularNeed.NeedTitle</a></h4>
-                <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
-                <p> @mostPopularNeed.Description </p>
+
+<div class="row">
+            <h1 class="page-title">Welcome</h1>
+            <hr>
+            <div class="text-center">
+                <img class="radius-img" src="~/Images/gs-leaf.png" alt="Good Leaf" />
+                <h4>Our aim is to connect people together for the greater good.</h4>
+                <h4>We firmly believe that spreading the word and telling people about it is a big step towards the solution.</h4>
+                <br />
+                <h4>Start Something Good.</h4>
             </div>
-            <div class="popular-box">
-                <a href="#"><img src="~/Images/lamborgini.jpg" alt="something1"/></a>
-                <h4><a href="#">Need Mechanic</a></h4>
-                <p>by Tyler Estes</p>
-                <p>I'm having issues with my car.  The other day it caught on fire.  Please help me.</p>
-            </div>            
-            <div class="popular-box">
-                <a href="#"><img src="~/Images/thanksgiving.jpg" alt="something1"/></a>
-                <h4><a href="#">Place to Stay for Thanksgiving</a></h4>
-                <p>by Josh Smith</p>
-                <p>I need a place to stay during Thanksgiving break.  I'll pay for any expenses and clean up after myself.</p>
-            </div>          
+            <hr>
         </div>
 
+            <div class="row">
+                <h2 class="page-title">Popular</h2>
+                <div class="col-md-4 popular-need">
+                    <div class="popular-container">
+                        <a href="#">
+                            <img class="img-responsive popular-img" src="~/Images/@mostPopularNeed.ImageName" alt="popular-need">
+                            <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
+                            <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
+                            <p> @mostPopularNeed.Description </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 popular-need">
+                <div class="popular-container">
+                    <a href="#">
+                        <img class="img-responsive popular-img" src="~/Images/books.jpg" alt="popular-need">
+                        <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
+                            <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
+                            <p> @mostPopularNeed.Description </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 popular-need">
+                <div class="popular-container">
+                    <a href="#">
+                        <img class="img-responsive popular-img" src="~/Images/lamborgini.jpg" alt="popular-need">
+                    <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
+                            <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
+                            <p> @mostPopularNeed.Description </p>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <div class="buttonRow" >
-            @foreach( var categoryName in categoryNameCounts.Keys) 
+        <hr>
+
+        <div class="row">
+            <h2 class="page-title">Categories</h2>
+            @foreach( var categoryName in categoryNameCounts.Keys)
             {
-            <div class="oneThirdsCol" >
-                <a href="#">@categoryName<br/> <strong> @categoryNameCounts[categoryName] </strong> </a>
+            <div class="col-xs-6 col-md-3">
+                <div class="category">
+                    @categoryName<br/> <strong> @categoryNameCounts[categoryName] </strong>
+                </div>
             </div>
             }
         </div>
-        
-        <section id="social">
-            <h2>Tell others about GoodStarter!</h2>
-            <p>Discover and fulfill needs with friends!</p>
-            <a href="#">Connect with Facebook</a>
-        </section>        
-        
-        <section id="learnMore">
-            <h2>Want to know more?</h2>
-            <p>Each GoodStarter need is an independent creation of someone like you!</p>
-            <a href="#">Learn More</a>
-        </section> 
+        <div class="row">
+            <section class="social col-md-offset-1 col-md-10">
+                <h2>Tell others about GoodStarter!</h2>
+                <p>Discover and fulfill needs with friends!</p>
+                <a class="social-button" href="#"><span id="facebook"><i class="fa fa-fw fa-facebook"></i></span> Connect with Facebook</a>
+            </section>
+        </div>
+        <div class="row">
+            <section class="learn-more col-md-offset-1 col-md-10">
+                <h2>Want to know more?</h2>
+                <p>Each GoodStarter need is an independent creation of someone like you!</p>
+                <a class="learn-button" href="#">Learn More</a>
+            </section>
+        </div>
+    </div>
