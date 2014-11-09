@@ -6,7 +6,7 @@ $(document).ready(function() {
         if ($(document).scrollTop() > 0)
         {
             $(".navbar-brand").css("font-size", "18px");
-            $(".navbar-brand").html("GoodStarter");
+            //$(".navbar-brand").html("GoodStarter");
             $(".navbar-default").css("opacity", "0.8");
             $(".navbar-default").css("height", "50px");
             $(".navbar-nav li a").css("display", "inline-block");
@@ -16,7 +16,7 @@ $(document).ready(function() {
         }
         else
         {
-            $(".navbar-brand").html("GoodStarter <i class=\"fa fa-leaf\"></i>");
+            //$(".navbar-brand").html("GoodStarter <i class=\"fa fa-leaf\"></i>");
             $(".navbar-default").css("opacity", "1");
             $(".navbar-brand").css("font-size", "36px");
             $(".navbar-default").css("height", "80px");

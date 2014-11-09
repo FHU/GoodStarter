@@ -19,78 +19,81 @@
     }
 }
 
-<div class="row">
-            <h1 class="page-title">Welcome</h1>
-            <hr>
-            <div class="text-center">
-                <img class="radius-img" src="~/Images/gs-leaf.png" alt="Good Leaf" />
-                <h4>Our aim is to connect people together for the greater good.</h4>
-                <h4>We firmly believe that spreading the word and telling people about it is a big step towards the solution.</h4>
-                <br />
-                <h4>Start Something Good.</h4>
-            </div>
-            <hr>
-        </div>
+<div class="row jumbotron">
 
-            <div class="row">
-                <h2 class="page-title">Popular</h2>
-                <div class="col-md-4 popular-need">
-                    <div class="popular-container">
-                        <a href="#">
-                            <img class="img-responsive popular-img" src="~/Images/@mostPopularNeed.ImageName" alt="popular-need">
-                            <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
-                            <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
-                            <p> @mostPopularNeed.Description </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 popular-need">
-                <div class="popular-container">
-                    <a href="#">
-                        <img class="img-responsive popular-img" src="~/Images/books.jpg" alt="popular-need">
-                        <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
-                            <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
-                            <p> @mostPopularNeed.Description </p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 popular-need">
-                <div class="popular-container">
-                    <a href="#">
-                        <img class="img-responsive popular-img" src="~/Images/lamborgini.jpg" alt="popular-need">
+    <div class="col-sm-8 ">
+        <h1>Start Something Good.</h1>
+        <h2>Our aim is to connect people together in order to spark good.</h2>
+        <h3>We believe that sharing needs in community will bring out the best in people.</h3>
+
+        <a class="learn-button" href="#">Share My Need</a>
+        <a class="social-button" href="#"> Meet a Need </a>
+
+    </div>
+    <div class="col-sm-4" >
+        <img class="img-responsive" src="~/Images/light_leaf_portrait.jpg" alt="leaf" /> 
+    </div>
+            
+</div>
+
+    <div class="row">
+        <h2 class="page-title">Trending Needs</h2>
+        <div class="col-md-4 popular-need">
+            <div class="popular-container">
+                <a href="#">
+                    <img class="img-responsive popular-img" src="~/Images/@mostPopularNeed.ImageName" alt="popular-need">
                     <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
-                            <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
-                            <p> @mostPopularNeed.Description </p>
-                    </a>
-                </div>
+                    <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
+                    <p> @mostPopularNeed.Description </p>
+                </a>
             </div>
         </div>
-
-        <hr>
-
-        <div class="row">
-            <h2 class="page-title">Categories</h2>
-            @foreach( var categoryName in categoryNameCounts.Keys)
-            {
-            <div class="col-xs-6 col-md-3">
-                <div class="category">
-                    @categoryName<br/> <strong> @categoryNameCounts[categoryName] </strong>
-                </div>
-            </div>
-            }
-        </div>
-        <div class="row">
-            <section class="social col-md-offset-1 col-md-10">
-                <h2>Tell others about GoodStarter!</h2>
-                <p>Discover and fulfill needs with friends!</p>
-                <a class="social-button" href="#"><span id="facebook"><i class="fa fa-fw fa-facebook"></i></span> Connect with Facebook</a>
-            </section>
-        </div>
-        <div class="row">
-            <section class="learn-more col-md-offset-1 col-md-10">
-                <h2>Want to know more?</h2>
-                <p>Each GoodStarter need is an independent creation of someone like you!</p>
-                <a class="learn-button" href="#">Learn More</a>
-            </section>
+        <div class="col-md-4 popular-need">
+        <div class="popular-container">
+            <a href="#">
+                <img class="img-responsive popular-img" src="~/Images/books.jpg" alt="popular-need">
+                <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
+                    <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
+                    <p> @mostPopularNeed.Description </p>
+            </a>
         </div>
     </div>
+    <div class="col-md-4 popular-need">
+        <div class="popular-container">
+            <a href="#">
+                <img class="img-responsive popular-img" src="~/Images/lamborgini.jpg" alt="popular-need">
+            <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
+                    <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
+                    <p> @mostPopularNeed.Description </p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <h2 class="page-title">Need Categories</h2>
+    @foreach( var categoryName in categoryNameCounts.Keys)
+    {
+    <div class="col-xs-6 col-md-3">
+        <div class="category">
+            @categoryName<br/> <strong> @categoryNameCounts[categoryName] </strong>
+        </div>
+    </div>
+    }
+</div>
+<div class="row">
+    <section class="social col-md-offset-1 col-md-10">
+        <h2>Tell others about GoodStarter!</h2>
+        <p>Discover and fulfill needs with friends!</p>
+        <a class="social-button" href="#"><span id="facebook"><i class="fa fa-fw fa-facebook"></i></span> Connect with Facebook</a>
+    </section>
+</div>
+<div class="row">
+    <section class="learn-more col-md-offset-1 col-md-10">
+        <h2>Want to know more?</h2>
+        <p>Each GoodStarter need is an independent creation of someone like you!</p>
+        <a class="learn-button" href="#">Learn More</a>
+    </section>
+</div>

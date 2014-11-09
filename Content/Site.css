@@ -13,10 +13,11 @@ body {
     background: url("https://d107cgb5lgj7br.cloudfront.net/img/backgrounds/noise-grey.v1.png");
     background-color: #F6F7F5;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
 }
 
 .main-container, .signup-container {
-    margin-top: 80px;
+    margin-top: 100px;
     margin-bottom: 50px;
     height: 100%;
 }
@@ -120,9 +121,19 @@ body {
     }
 }
 
+
+.jumbotron h1 {
+    font-size: 3.5em;
+}
+
+
 footer {
     background-color: #2C3E50;
     color: #95a5a6;
+}
+
+footer p {
+    margin-top:  20px;
 }
 
 .footer-below {
@@ -224,9 +235,16 @@ footer {
     margin-bottom: 30px;
 }
 
-.radius-img {
-    margin: 40px;
-    border-radius: 164px;
+.firstRow {
+    margin-top: 30px;
+}
+
+row {
+    margin-top: 30px;
+}
+
+img {
+    max-width:  100%;   
 }
 
 .category {
