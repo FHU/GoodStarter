@@ -410,24 +410,9 @@ img {
     padding-bottom: 10px;
 }
 
-.reply-button {
-    display: inline-block;
-    background: #2ecc71;
-    transition: 0.2s ease-in-out;
-    color: white;
-    border-radius: 2px;
-    padding: 10px;
-    border: 1px solid #2ecc71;
-}
+.post-date{
+   margin-bottom: 5px;
 
-.reply-button:hover {
-    background: #27AE60;
-}
-
-.reply-button:active {
-    color: #2ecc71;
-    background: white;
-    border: 1px solid #27AE60;
 }
 
 /* -------------------------- END COMMENTS CSS -------------------------- */
