@@ -501,7 +501,6 @@ img {
 .need-nav ul {
     text-align: center;
     list-style: none;
-    background: white;
     padding: 40px 0 10px 0;
 }
 
@@ -566,3 +565,28 @@ img {
 /* -------------------------- START SHARE CSS -------------------------- */
 /* -------------------------- END SHARE CSS -------------------------- */
 
+
+/* -------------------------- VIEW NEED CSS ---------------------------*/
+#need-title{
+    font-size:  3em;
+    text-align: center;
+}
+#need-author{
+    font-size: 1em;
+    text-align: center;
+}
+#description{
+    padding: 10px;
+    border: 1px solid #E2E2E2;
+    border-radius: 10px;
+}
+#stats{
+    list-style: none;
+    padding-left:  0;
+    
+}
+.bigNumber{
+    font-size:  3em;
+}
+
+/* -------------------------- END VIEW NEED CSS ---------------------------*/
