@@ -235,6 +235,18 @@ footer p {
     margin-bottom: 30px;
 }
 
+.title-creator-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.creator-img {
+    border: 1px solid #2ecc71;
+    border-radius: 64px;
+    width: 64px;
+    height: 64px;
+}
+
 .firstRow {
     margin-top: 30px;
 }
@@ -387,7 +399,7 @@ img {
 /* -------------------------- START COMMENTS CSS -------------------------- */
 
 .comments-container {
-    margin-top: 60px;
+    margin-top: 0px;
 }
 
 .user-comment {
@@ -418,16 +430,21 @@ img {
 /* -------------------------- END COMMENTS CSS -------------------------- */
 
 /* -------------------------- START UPDATES CSS -------------------------- */
+
 .updates {
     border: 1px solid #ecf0f1;
     background: white;
     padding: 40px;
-    padding-bottom: 60px;
     margin-bottom: 20px;
 }
 
-.updates p {
-    padding-bottom: 10px;
+.updates-title {
+    border-bottom: 2px solid #ecf0f1;
+    margin-bottom: 10px;
+}
+
+.updates h2 {
+    margin-top: 0px;
 }
 
 /* -------------------------- END UPDATES CSS -------------------------- */
@@ -506,14 +523,6 @@ img {
 
 
 /* -------------------------- VIEW NEED CSS ---------------------------*/
-#need-title{
-    font-size:  3em;
-    text-align: center;
-}
-#need-author{
-    font-size: 1em;
-    text-align: center;
-}
 #description{
     padding: 10px;
     border: 1px solid #E2E2E2;
