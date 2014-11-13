@@ -126,6 +126,11 @@ body {
     font-size: 3.5em;
 }
 
+.sub-title {
+    border-bottom: 2px solid #ecf0f1;
+    margin-bottom: 10px;
+}
+
 
 footer {
     background-color: #2C3E50;
@@ -445,11 +450,6 @@ img {
     margin-bottom: 20px;
 }
 
-.updates-title {
-    border-bottom: 2px solid #ecf0f1;
-    margin-bottom: 10px;
-}
-
 .updates h2 {
     margin-top: 0px;
 }
@@ -537,6 +537,20 @@ img {
     color: #2ecc71;
     background: white;
     border: 1px solid #27AE60;
+}
+
+.video-share-btn-group {
+    margin:  40px;
+    color:  #2ecc71;
+}
+
+.video-share-btn-group .btn-outline {
+    margin-top: 15px;
+    border: solid 2px #2ecc71;
+    color:  #2ecc71;
+    font-size: 20px;
+    background: 0 0;
+    transition: all .3s ease-in-out;
 }
 
 /* -------------------------- END NEED CSS -------------------------- */
