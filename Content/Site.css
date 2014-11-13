@@ -221,7 +221,6 @@ footer p {
 /* -------------------------- START POPULAR CSS -------------------------- */
 
 .popular-need {
-    padding: 50px;
     background: white;
 }
 
@@ -257,11 +256,7 @@ footer p {
     margin-top: 30px;
 }
 
-row {
-    margin-top: 30px;
-}
-
-img {
+.img {
     max-width:  100%;   
 }
 
