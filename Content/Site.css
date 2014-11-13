@@ -424,8 +424,7 @@ footer p {
 .user-comment {
     border: 1px solid #ecf0f1;
     background: white;
-    padding: 40px;
-    padding-bottom: 60px;
+    padding: 30px;
     margin-bottom: 20px;
 }
 
@@ -442,9 +441,15 @@ footer p {
 }
 
 .post-date{
-   margin-bottom: 5px;
-
+   margin-bottom: 20px;
+   color: #555;
 }
+
+.commenter-name{
+   margin-bottom: 20px;
+   color: #555;
+}
+
 
 /* -------------------------- END COMMENTS CSS -------------------------- */
 
