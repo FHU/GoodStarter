@@ -1,63 +1,78 @@
-﻿@{
-    Layout = "~/_SiteLayout.cshtml";
-    Page.Title = "Comments";    
-}
-
-                <div class="row">
-                    <h1 class="page-title">A Place to Stay Over Thanksgiving Break</h1>
-                </div>
-                <div class="row">
-                    <div class="title-creator-info col-md-4">
-                        <img class="creator-img float-left" src="~/Images/jonathan.young.jpg" />
-                        <h3 class="float-left">Josh Smith</h3>
-                    </div>
-                    <div class="need-nav col-md-offset-2 col-md-6">
-                        <ul class="float-right">
-                            <li><a  href="Need"><i class="fa fa-home"></i> Home</a>
-                            </li>
-                            <li><a href="Comments"><i class="fa fa-pencil-square-o"></i> Comments</a>
-                            </li>
-                            <li><a href="Updates"><i class="fa fa-cloud-upload"></i> Updates</a>
-                            </li>
-                        </ul>
-                     </div>
-                </div>
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="user-comment">
-                    <div class="post-date row">
-                        <div class="float-right">
-                            10/10/2014
-                        </div>
-                    </div>
-                        <img class="comment-img float-left" src="~/Images/jaimeleonard.jpg" alt="comment picture" />
-                        <p>My name is Jaime Leonard. I can help! Message me and we can work something out.</p>
-                    </div>
-                    <div class="user-comment">
-                    <div class="post-date row">
-                        <div class="float-right">
-                            10/10/2014
-                        </div>
-                    </div>
-                        <img class="comment-img float-left" src="~/Images/tyler.estes.jpg" alt="comment picture" />
-                        <p>I'm Tyler Estes. I can help too. Let's get together soon.</p>
-                    </div>
-                    <div class="user-comment">
-                    <div class="post-date row">
-                        <div class="float-right">
-                            10/10/2014
-                        </div>
-                    </div>
-                        <img class="comment-img float-left" src="~/Images/jonathan.young.jpg" alt="comment picture" />
-                        <p>I'm Jonathan Young. I dropped off the face of the earth. Don't know what's going on.</p>
+﻿@{ Layout = "~/_SiteLayout.cshtml"; Page.Title = "Comments"; }
+<div class="row">
+    <h1 class="page-title">A Place to Stay Over Thanksgiving Break</h1>
+</div>
+<div class="row">
+    <div class="title-creator-info col-md-4">
+        <img class="creator-img float-left" src="~/Images/jonathan.young.jpg" alt="test" />
+        <h3 class="float-left">Josh Smith</h3>
+    </div>
+    <div class="need-nav col-md-offset-2 col-md-6">
+        <ul class="float-right">
+            <li><a href="Need"><i class="fa fa-home"></i> Home</a>
+            </li>
+            <li><a href="Comments"><i class="fa fa-pencil-square-o"></i> Comments</a>
+            </li>
+            <li><a href="Updates"><i class="fa fa-cloud-upload"></i> Updates</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<section class="description">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="user-comment">
+                <div class="post-date row sub-title">
+                    <div class="float-left">
+                        10/10/2014
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="need-stats">
-                        <h4><span class="stat-num">2</span> Need Meeters</h4>
-                        <h4><span class="stat-num">9</span> Days to Go</h4>
-                        <h4><span class="stat-num">14</span> Watching</h4>
-                        <div class="meet-need-button">Meet Need</div>
+                <img class="comment-img float-left" src="~/Images/jaimeleonard.jpg" alt="comment picture" />
+                <p>I can help! My family and I would love to have you over for thanksgiving! Message me and we can work something out.</p>
+                <div class="commenter-name row">
+                    <div class="float-right">
+                        Jaime Leonard
                     </div>
                 </div>
             </div>
+
+            <div class="user-comment">
+                <div class="post-date row sub-title">
+                    <div class="float-left">
+                        11/02/2014
+                    </div>
+                </div>
+                <img class="comment-img float-left" src="~/Images/tyler.estes.jpg" alt="comment picture" />
+                <p>I would be willing to help too. Let me know if you are still looking for a place to stay.</p>
+                <div class="commenter-name row">
+                    <div class="float-right">
+                        Tyler Estes
+                    </div>
+                </div>
+            </div>
+            <div class="user-comment">
+                <div class="post-date row sub-title">
+                    <div class="float-left">
+                        12/21/2014
+                    </div>
+                </div>
+                <img class="comment-img float-left" src="~/Images/jonathan.young.jpg" alt="comment picture" />
+                <p>Don't know what's going on.</p>
+                <div class="commenter-name row">
+                    <div class="float-right">
+                        Jonathan Young
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="need-stats">
+                <h4><span class="stat-num">2</span> Need Meeters</h4>
+                <h4><span class="stat-num">9</span> Days to Go</h4>
+                <h4><span class="stat-num">14</span> Watching</h4>
+                <div class="meet-need-button">Meet Need</div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
