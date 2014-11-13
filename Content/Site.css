@@ -413,7 +413,7 @@ img {
     border: 1px solid #ecf0f1;
     background: white;
     padding: 40px;
-    padding-bottom: 60px;
+    padding-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -426,12 +426,15 @@ img {
 }
 
 .user-comment p {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .post-date{
-   margin-bottom: 5px;
+   margin-bottom: 15px;
+}
 
+.commenter-name{
+    margin-top: 5px;
 }
 
 /* -------------------------- END COMMENTS CSS -------------------------- */
