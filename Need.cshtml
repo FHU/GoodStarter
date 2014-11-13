@@ -1,6 +1,14 @@
 ﻿@{
     Layout = "~/_SiteLayout.cshtml";
     Page.Title = "Need";
+
+    var NeedID = UrlData[0];
+
+    var id = 0;
+
+    if (!NeedID.IsEmpty() && NeedID.IsInt()) {
+        id = Convert.ToInt32(NeedID);
+    }
 }
 <div class="row">
     <h1 class="page-title">A Place to Stay Over Thanksgiving Break</h1>
@@ -44,19 +52,19 @@
             <p>This need will only be met if a Meeter is found by Fri, Nov 21 2014 3:00 PM.</p>
         </div>
     </div>
-    <div class="row">
-    <div class="col-md-4">
-    <ul class="list-inline video-share-btn-group">
-        <li>
-            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-        </li>
-        <li>
-            <a href="mailto:goodstarterfhu@gmail.com" class="btn-social btn-outline"><i class="fa fa-fw fa-envelope"></i></a>
-        </li>
-        <li>
-            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-        </li>
-    </ul>
+    <div class="col-md-8">
+                <h2>More Info</h2>
+                <p>My name is Josh Smith.  I am in need to stay at someone's house this Thanksgiving.
+                   I will make sure that I clean up after myself and try not to bother anyone.
+                   I'll even live in your basement all week if you don't want the rest of your
+                   family to see me.  It's okay, I know how to hide in basements - I've been doing
+                   it since I was 18.</p>
+                <h2>Other Info</h2>
+                <p>My name is Josh Smith.  I am in need to stay at someone's house this Thanksgiving.
+                   I will make sure that I clean up after myself and try not to bother anyone.
+                   I'll even live in your basement all week if you don't want the rest of your
+                   family to see me.  It's okay, I know how to hide in basements - I've been doing
+                   it since I was 18.</p>
 </div>
     </div>
 </section>
