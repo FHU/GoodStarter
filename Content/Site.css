@@ -232,12 +232,12 @@ footer p {
 .page-title {
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 .title-creator-info {
     text-align: center;
     margin-bottom: 15px;
+    padding-top: 20px;
 }
 
 .creator-img {
@@ -245,6 +245,8 @@ footer p {
     border-radius: 64px;
     width: 64px;
     height: 64px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .firstRow {
@@ -465,6 +467,7 @@ img {
     text-align: center;
     list-style: none;
     padding: 40px 0 10px 0;
+    margin-right: 15px;
 }
 
 .need-nav ul li {
