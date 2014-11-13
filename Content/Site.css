@@ -411,7 +411,7 @@ img {
 /* -------------------------- START COMMENTS CSS -------------------------- */
 
 .comments-container {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .user-comment {
@@ -435,8 +435,7 @@ img {
 }
 
 .post-date{
-   margin-bottom: 5px;
-
+    padding-bottom:  10px;
 }
 
 /* -------------------------- END COMMENTS CSS -------------------------- */
