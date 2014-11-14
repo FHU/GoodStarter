@@ -4,16 +4,7 @@
 
     var db = Database.Open("GoodStarter");
     var mostPopularNeeds = db.Query("SELECT * FROM Need JOIN (SELECT NeedID, COUNT(NeedID) CT FROM Watching GROUP BY NeedID) AS NeedCounts ON NeedCounts.NeedID=Need.NeedID JOIN UserProfile ON UserProfile.UserID=Need.CreatorID ORDER BY NeedCounts.CT DESC");
-    
-    Dictionary<string, int> categoryNameCounts = new Dictionary<string, int>();
 
-    var categoryIDs = db.Query("SELECT CategoryID FROM Category");
-    foreach( var categoryRow in categoryIDs) {
-        string categoryName = db.QueryValue("Select Name FROM Category WHERE CategoryID=@0", categoryRow.categoryID);
-        int categoryCount = db.QueryValue("Select count(*) FROM Need_Category WHERE CategoryID=@0", categoryRow.categoryID);
-        
-        categoryNameCounts.Add(categoryName, categoryCount);
-    }
 }
 
 <div class="row jumbotron">
@@ -54,17 +45,6 @@
 
 <hr>
 
-<div class="row">
-    <h2 class="page-title">Need Categories</h2>
-    @foreach( var categoryName in categoryNameCounts.Keys)
-    {
-    <div class="col-xs-6 col-md-3">
-        <div class="category">
-            @categoryName<br/> <strong> @categoryNameCounts[categoryName] </strong>
-        </div>
-    </div>
-    }
-</div>
 <div class="row">
     <section class="social col-md-12">
         <h2>Tell others about GoodStarter!</h2>

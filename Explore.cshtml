@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Explore Needs";  
+
+    var db = Database.Open("GoodStarter");
+     
+    Dictionary<string, int> categoryNameCounts = new Dictionary<string, int>();
+
+    var categoryIDs = db.Query("SELECT CategoryID FROM Category");
+    foreach( var categoryRow in categoryIDs) {
+        string categoryName = db.QueryValue("Select Name FROM Category WHERE CategoryID=@0", categoryRow.categoryID);
+        int categoryCount = db.QueryValue("Select count(*) FROM Need_Category WHERE CategoryID=@0", categoryRow.categoryID);
+        
+        categoryNameCounts.Add(categoryName, categoryCount);
+    }
+}
+
+<div class="row">
+    <h1 class="page-title">Explore Needs</h1>
+</div>
+
+<div class="row">
+    @foreach( var categoryName in categoryNameCounts.Keys)
+    {
+    <div class="col-xs-6 col-md-3">
+        <div class="category">
+            @categoryName<br/> <strong> @categoryNameCounts[categoryName] </strong>
+        </div>
+    </div>
+    }
+</div>
+

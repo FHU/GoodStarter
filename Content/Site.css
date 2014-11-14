@@ -30,6 +30,7 @@ body {
 
 .navbar-default a {
     font-family: "Montserrat",Helvetica,Arial,sans-serif;
+    font-size: 1.2em;
 }
 
 /* navbar */
@@ -52,7 +53,7 @@ body {
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: white;
+    color: #333;
 }
 /* link */
 .navbar-default .navbar-nav > li > a{
@@ -60,13 +61,15 @@ body {
     line-height: 50px;
     transition: 0.2s ease-in-out;
 }
+
 .navbar-form {
     line-height: 60px;
     transition: 0.2s ease-in-out;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: white;
+    color: #333;
+    background: white;
 }
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
