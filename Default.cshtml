@@ -3,10 +3,7 @@
     Page.Title = "Start Something Good";
 
     var db = Database.Open("GoodStarter");
-    var mostPopularNeedID = db.QuerySingle("SELECT Count(NeedID), NeedID FROM Watching GROUP BY NeedID");
-    var mostPopularNeed = db.QuerySingle("SELECT * FROM Need WHERE NeedID = @0", mostPopularNeedID.NeedID);
-    var mostPopularNeedCreator = db.QuerySingle("SELECT * FROM UserProfile WHERE UserID=@0", mostPopularNeed.CreatorID);
-
+    var mostPopularNeeds = db.Query("SELECT * FROM Need JOIN (SELECT NeedID, COUNT(NeedID) CT FROM Watching GROUP BY NeedID) AS NeedCounts ON NeedCounts.NeedID=Need.NeedID JOIN UserProfile ON UserProfile.UserID=Need.CreatorID ORDER BY NeedCounts.CT DESC");
     
     Dictionary<string, int> categoryNameCounts = new Dictionary<string, int>();
 
@@ -36,38 +33,23 @@
             
 </div>
 
-    <div class="row">
+<div class="row">
         <h2 class="page-title">Trending Needs</h2>
+
+        @foreach( var need in mostPopularNeeds) {
         <div class="col-md-4 popular-need">
             <div class="popular-container">
-                <a href="#">
-                    <img class="img-responsive popular-img" src="~/Images/@mostPopularNeed.ImageName" alt="popular-need">
-                    <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
-                    <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
-                    <p> @mostPopularNeed.Description </p>
+                <a href="/need/@need.NeedID">
+                    <img class="img-responsive popular-img" src="~/Images/@need.ImageName" alt="popular-need">
+                    <h3> @need.NeedTitle</h3>
+                    <p> @need.FirstName @need.LastName </p>
+                    <p> @need.Description </p>
                 </a>
             </div>
-        </div>
-        <div class="col-md-4 popular-need">
-        <div class="popular-container">
-            <a href="#">
-                <img class="img-responsive popular-img" src="~/Images/books.jpg" alt="popular-need">
-                <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
-                    <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
-                    <p> @mostPopularNeed.Description </p>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 popular-need">
-        <div class="popular-container">
-            <a href="#">
-                <img class="img-responsive popular-img" src="~/Images/lamborgini.jpg" alt="popular-need">
-            <h3><a href="#"> @mostPopularNeed.NeedTitle</a></h3>
-                    <p>by @mostPopularNeedCreator.FirstName @mostPopularNeedCreator.LastName </p>
-                    <p> @mostPopularNeed.Description </p>
-            </a>
-        </div>
-    </div>
+        </div>  
+        }
+            
+        
 </div>
 
 <hr>
