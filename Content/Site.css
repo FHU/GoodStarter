@@ -9,11 +9,12 @@
 /* -------------------------- START LAYOUT CSS -------------------------- */
 
 body {
-    overflow-x: auto;
+    
     background: url("https://d107cgb5lgj7br.cloudfront.net/img/backgrounds/noise-grey.v1.png");
     background-color: #F6F7F5;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     font-size: 16px;
+    overflow-x: auto;
 }
 
 .main-container, .signup-container {
@@ -27,9 +28,13 @@ body {
     width: 100%;
 }
 
+.navbar-default a {
+    font-family: "Montserrat",Helvetica,Arial,sans-serif;
+}
+
 /* navbar */
 .navbar-default {
-    background: #2ecc71 !important;
+    background: #2ecc71;
     border-color: #E7E7E7;
     transition: 0.2s ease-in-out;
     border: none;
@@ -119,6 +124,21 @@ body {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #333;
     }
+}
+
+h1, h2, h3 {
+    font-family:  "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+h4, h5 {
+  font-family:  "Lato", sans-serif;
+  font-weight: 700;  
+}
+
+p {
+    font-family: "Lato" , Helvetica, sans-serif;
+    font-size:  16px;
 }
 
 
@@ -456,6 +476,9 @@ img {
     background: #E8F6FF;
     border-bottom: 2px solid #27AE60;
     transition: 0.2s ease-in-out;
+    font-family: Lato, Helvetica, sans-serif;
+    font-size: 1.3em;
+
 }
 
 .need-nav ul li a:hover {
