@@ -13,8 +13,8 @@
 
     var db = Database.Open("GoodStarter");
     var needInfo = db.QuerySingle("SELECT CreatorID, NeedTitle FROM Need WHERE NeedID = @0", id);
-    var userInfo = db.QuerySingle("SELECT FirstName, LastName, Picture FROM UserProfile WHERE UserId = @0", needInfo.CreatorID);
-    var updatePosts = db.Query("SELECT * FROM Updates WHERE NeedID = @0 ORDER BY PostDate", id);
+    var userInfo = db.QuerySingle("SELECT * FROM UserProfile WHERE UserId = @0", needInfo.CreatorID);
+    var updatePosts = db.Query("SELECT * FROM Updates WHERE NeedID = @0 ORDER BY PostDate DESC", id);
 }
 
 <div class="row">
@@ -22,7 +22,7 @@
 </div>
 <div class="row">
     <div class="title-creator-info col-md-4">
-        <img class="creator-img float-left" src="~/Images/jonathan.young.jpg" alt="" />
+        <img class="creator-img float-left" src="~/Images/@userInfo.Picture" alt="" />
         <h3 class="float-left">@userInfo.FirstName @userInfo.LastName</h3>
     </div>
     <div class="need-nav col-md-offset-2 col-md-6">
@@ -43,7 +43,7 @@
             @foreach (var update in updatePosts) {
                 <div class="updates">
                     <div class="sub-title row">
-                        <h2 class="float-left"> This is the updates title </h2>
+                        <h2 class="float-left"> @update.Title </h2>
                         <p class="float-right"> @update.PostDate </p>
                     </div>
                     <p> @update.Text </p>
