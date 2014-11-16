@@ -15,7 +15,9 @@
     var updatePosts = db.Query("SELECT * FROM Updates WHERE NeedID = @0 ORDER BY PostDate DESC", id);  
 }
 
-<section id="description">
+<section class="description">
+    <div class="container">
+    <div class="row">
     <div class="title-creator-info">
         <div class="col-md-2">
             <img class="creator-img float-left" src="~/Images/@userInfo.Picture" alt="user-img"/>
@@ -24,10 +26,13 @@
             <h1>@userInfo.FirstName @userInfo.LastName</h1>
             <h3>@userInfo.education</h3> 
             <h3>@userInfo.HomeTown, <b>@userInfo.HomeState</b></h3>
-            <h4><b>About me:</b>I am a computer science major that was raised in FL.
+            <h4><b>About me:</b> I am a computer science major that was raised in FL.
                      Now I spend my days eating doughnuts in class and crushing girls on 
                     Freed-Haromony. Please help my needs!</h4>
         </div>
+    </div>
+    </div>
+    <div class="row">
         @foreach(var need in needInfo) {
         <div class="col-md-4 need-stats">
                     <img class="img-responsive popular-img" src="~/Images/@need.ImageName" alt="popular-need">
@@ -41,6 +46,7 @@
                     </a>
         </div>  
         }
+    </div>
 
     </div>
     </div>
