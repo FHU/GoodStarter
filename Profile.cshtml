@@ -1,84 +1,46 @@
 ﻿@{
     Layout = "~/_SiteLayout.cshtml";
-    Page.Title = "Profile";  
+    Page.Title = "Profile";
     
     var needID = UrlData[0];
-        var id = 0;
-        if (!needID.IsEmpty() && needID.IsInt()) {
-            id = Convert.ToInt32(needID);
-        }
+    var id = 0;
+    if (!needID.IsEmpty() && needID.IsInt()) {
+        id = Convert.ToInt32(needID);
+    }
     
     
 
     var db = Database.Open("GoodStarter");
     var needInfo = db.QuerySingle("SELECT CreatorID, NeedTitle FROM Need WHERE NeedID = @0", id);
     var userInfo = db.QuerySingle("SELECT * FROM UserProfile WHERE UserId = @0", needInfo.CreatorID);
-    var updatePosts = db.Query("SELECT * FROM Updates WHERE NeedID = @0 ORDER BY PostDate DESC", id);
-
+    var updatePosts = db.Query("SELECT * FROM Updates WHERE NeedID = @0 ORDER BY PostDate DESC", id);  
 }
 
-
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
-       <section id="description">
-        <div class="title-creator-info">
-            <div class="col-md-2">
-                <img class="creator-img float-left" src="~/Images/jonathan.young.jpg" />
-            </div>
-            <div class="col-md-3">
+<section id="description">
+    <div class="title-creator-info">
+        <div class="col-md-2">
+            <img class="creator-img float-left" src="~/Images/@userInfo.Picture" />
+        </div>
+        <div class="col-md-3">
             <h1>@userInfo.FirstName @userInfo.LastName</h1>
             <h3>@userInfo.education</h3> 
-            <h3>@userInfo.HomeTown, <b>@userInfo.HomeStateIN</b></h3>
+            <h3>@userInfo.HomeTown, <b>@userInfo.HomeState</b></h3>
             <h4><b>About me:</b><p>I am a computer science major that was raised in FL.
                      Now I spend my days eating doughnuts in class and crushing girls on 
                     Freed-Haromony. Please help my needs!</p></h4>
-            </div> 
-            <div class="col-md-6">
-                        <div class="need-stats">
-                            <h3><b>Need:</b>I need a place to stay for Thanksgiving</h3>
-                            <h4><span class="stat-num">9</span> Days to Go</h4>
-                            <h4><span class="stat-num">14</span> Watching</h4>
-                            <div class="meet-need-button">View Need</div>
-                            
-                        </div>
-                         </br>
-                        <p>This need will only be met if a Meeter is found by Fri, Nov 21 2014 3:00 PM.</p>
-                    </div>
-
-
-
-         
         </div>
-        
-  
-       
+        <div class="col-md-6">
+            <div class="need-stats">
+                <h3><b>Need:</b>I need a place to stay for Thanksgiving</h3>
+                <h4><span class="stat-num">9</span> Days to Go</h4>
+                <h4><span class="stat-num">14</span> Watching</h4>
+                <div class="meet-need-button">View Need</div>
 
-
-
-
-
-                    <div class="col-md-4">
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="mailto:goodstarterfhu@gmail.com" class="btn-social btn-outline"><i class="fa fa-fw fa-envelope"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                        </ul>
-                    </div>               
             </div>
-        </section>
+            </br>
+            <p>This need will only be met if a Meeter is found by Fri, Nov 21 2014 3:00 PM.</p>
+        </div>
 
-
-    </body>
-</html>
+    </div>
+    </div>
+</section>
