@@ -126,7 +126,7 @@ body {
     .container>.navbar-collapse {
     text-align:  center;
     margin-top:  30px;
-}
+    }
     
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: white;
@@ -149,6 +149,20 @@ body {
     .social, .learn-more {
         margin-left:  40px;
         margin-right:  40px;
+    }
+
+    .jumbotron {
+        margin-left:  10px;
+        margin-right:  10px;
+    }
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+    .popular-container {
+        margin: 0 auto;
+        width:  90%;
     }
 }
 

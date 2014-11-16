@@ -13,6 +13,7 @@ $(document).ready(function() {
             $(".navbar-brand").css("line-height", "20px");
             $(".navbar-nav li a").css("line-height", "20px");
             $(".navbar-form").css("line-height", "20px");
+            $(".container>.navbar-collapse").css("margin-top", "0");
         }
         else
         {
@@ -23,6 +24,10 @@ $(document).ready(function() {
             $(".navbar-brand").css("line-height", "50px");
             $(".navbar-nav li a").css("line-height", "50px");
             $(".navbar-form").css("line-height", "60px");
+            if ( $(window).width() < 768)
+            {
+                $(".container>.navbar-collapse").css("margin-top", "30px")
+            }
         }
         
         });
