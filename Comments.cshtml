@@ -1,53 +1,58 @@
-﻿@{ Layout = "~/_SiteLayout.cshtml"; Page.Title = "Comments"; }
-
-@RenderPage("NeedNav.cshtml")
-
+﻿@{ Layout = "~/_SiteLayout.cshtml";
+   Page.Title = "Comments"; 
+ 
+    
+        var needID = UrlData[0];
+        var id = 0;
+        if (!needID.IsEmpty() && needID.IsInt()) {
+            id = Convert.ToInt32(needID);
+        }
+    
+    
+   var db = Database.Open("GoodStarter");
+   var comments = db.Query("SELECT * from Comment join UserProfile on comment.UserID = UserProfile.UserID where NeedID = @0 order by PostDate", id);
+   
+   }
+<div class="row">
+    <h1 class="page-title">A Place to Stay Over Thanksgiving Break</h1>
+</div>
+<div class="row">
+    <div class="title-creator-info col-md-4">
+        <img class="creator-img float-left" src="~/Images/jonathan.young.jpg" alt="test" />
+        <h3 class="float-left">Josh Smith</h3>
+    </div>
+    <div class="need-nav col-md-offset-2 col-md-6">
+        <ul class="float-right">
+            <li><a href="Need"><i class="fa fa-home"></i> Home</a>
+            </li>
+            <li><a href="Comments"><i class="fa fa-pencil-square-o"></i> Comments</a>
+            </li>
+            <li><a href="Updates"><i class="fa fa-cloud-upload"></i> Updates</a>
+            </li>
+        </ul>
+    </div>
+</div>
 <section class="description">
     <div class="row">
         <div class="col-md-8">
+            @foreach(var comment in comments)
+            {
             <div class="user-comment">
                 <div class="post-date row sub-title">
                     <div class="float-right">
-                        10/10/14
+                        @comment.PostDate
                     </div>
                     <div class="float-left">
-                        Jaime Leonard
+                        @comment.FirstName @comment.LastName
                     </div>
                 </div>
-                <img class="comment-img float-left" src="~/Images/jaimeleonard.jpg" alt="comment picture" />
-                <p>I can help! My family and I would love to have you over for thanksgiving! Message me and we can work something out.</p>
+                <img class="comment-img float-left" src="~/Images/@comment.Picture" alt="comment picture" />
+                <p>@comment.Text</p>
                 <div class="commenter-name row">
                 </div>
             </div>
+            }
 
-            <div class="user-comment">
-                <div class="post-date row sub-title">
-                    <div class="float-right">
-                        11/02/14
-                    </div>
-                    <div class="float-left">
-                        Tyler Estes
-                    </div>
-                </div>
-                <img class="comment-img float-left" src="~/Images/tyler.estes.jpg" alt="comment picture" />
-                <p>I would be willing to help too. Let me know if you are still looking for a place to stay.</p>
-                <div class="commenter-name row">
-                </div>
-            </div>
-            <div class="user-comment">
-                <div class="post-date row sub-title">
-                    <div class="float-right">
-                        12/21/14
-                    </div>
-                    <div class="float-left">
-                        Jonathan Young
-                    </div>
-                </div>
-                <img class="comment-img float-left" src="~/Images/jonathan.young.jpg" alt="comment picture" />
-                <p>Don't know what's going on.</p>
-                <div class="commenter-name row">
-                </div>
-            </div>
         </div>
         <div class="col-md-4">
             <div class="need-stats">
