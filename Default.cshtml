@@ -19,7 +19,7 @@
 
     </div>
     <div class="col-sm-4" >
-        <img class="img-responsive" src="~/Images/light_leaf_portrait.jpg" alt="leaf" /> 
+        <img class="img-responsive leaf-img" src="~/Images/light_leaf_portrait.jpg" alt="leaf" /> 
     </div>
             
 </div>
@@ -28,7 +28,7 @@
         <h2 class="page-title">Trending Needs</h2>
 
         @foreach( var need in mostPopularNeeds) {
-        <div class="col-md-4 popular-need">
+        <div class="col-sm-4 popular-need">
             <div class="popular-container">
                 <a href="/need/@need.NeedID">
                     <img class="img-responsive popular-img" src="~/Images/@need.ImageName" alt="popular-need">
