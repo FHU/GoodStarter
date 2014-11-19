@@ -556,12 +556,54 @@ img {
     border: 1px solid #ecf0f1;
     background: white;
     padding: 40px;
-    padding-bottom: 60px;
     margin-bottom: 20px;
+}
+
+.updates form h2 {
+    margin-top: 0px;
+}
+
+.updates:nth-of-type(1) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.updates textarea {
+    resize: none;
+    overflow: auto;
+}
+
+.submit {
+    margin-top: 10px;
+    margin-right: 15px;
+    border: 1px solid #2eec71;
+    text-align: center;
+    font-size: 1.25em;
+    background: #2ecc71;
+    transition: 0.2s ease-in-out;
+    color: white;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.updates a {
+    color: black;
+    text-decoration: none;
+}
+
+.updates a:hover {
+    color: #2C3E50;
+    text-decoration: underline;
 }
 
 .updates p {
     padding-bottom: 10px;
+}
+
+.field-validation-error { 
+    color:  red; 
+    font-weight: bold;
+    margin-left: 25px;
 }
 
 /* -------------------------- END UPDATES CSS -------------------------- */
