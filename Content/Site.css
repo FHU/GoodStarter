@@ -532,7 +532,12 @@ img {
     padding-bottom: 60px;
     margin-bottom: 20px;
 }
-
+.commenterName {
+    font-weight: 500;
+    font-size: medium;
+    text-decoration: none;
+    color:  black;
+}
 .comment-img {
     border: 1px solid #2ecc71;
     margin-right: 20px;

@@ -25,11 +25,11 @@
                     <div class="float-right">
                         @Helpers.GetPrettyDate(comment.PostDate)
                     </div>
-                    <div class="float-left">
-                        @comment.FirstName @comment.LastName
+                    <div class="commenterName float-left">
+                        <a href="~/Profile/@comment.UserId"><div class="commenterName float-left">@comment.FirstName @comment.LastName</div> </a>
                     </div>
                 </div>
-                <img class="comment-img float-left" src="~/Images/@comment.Picture" alt="comment picture" />
+                <a href="~/Profile/@comment.UserId"><img class="comment-img float-left" src="~/Images/@comment.Picture" alt="" /></a>
                 <p>@comment.Text</p>
                 <div class="commenter-name row">
                 </div>
