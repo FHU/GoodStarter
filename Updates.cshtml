@@ -8,8 +8,6 @@
         if (!needID.IsEmpty() && needID.IsInt()) {
             id = Convert.ToInt32(needID);
         }
-    
-    
 
     var db = Database.Open("GoodStarter");
     var needInfo = db.QuerySingle("SELECT CreatorID, NeedTitle FROM Need WHERE NeedID = @0", id);
@@ -29,7 +27,7 @@
                 <div class="updates">
                     <div class="sub-title row">
                         <h2 class="float-left"> @update.Title </h2>
-                        <p class="float-right"> @update.PostDate.ToShortDateString() </p>
+                        <p class="float-right"> @Helpers.GetPrettyDate(update.PostDate) </p>
                     </div>
                     <p> @update.Text </p>
                 </div>

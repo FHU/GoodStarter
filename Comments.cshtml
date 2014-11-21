@@ -23,7 +23,7 @@
             <div class="user-comment">
                 <div class="post-date row sub-title">
                     <div class="float-right">
-                        @comment.PostDate
+                        @Helpers.GetPrettyDate(comment.PostDate)
                     </div>
                     <div class="float-left">
                         @comment.FirstName @comment.LastName
