@@ -12,7 +12,8 @@
    var db = Database.Open("GoodStarter");
    var comments = db.Query("SELECT * FROM Comment JOIN UserProfile ON comment.UserID = UserProfile.UserID WHERE NeedID = @0 ORDER BY PostDate DESC", id);
    
-   }
+}
+
 @RenderPage("NeedNav.cshtml")
 
 <section class="description">
