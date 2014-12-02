@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Search Results";
+
+    string query = HttpUtility.UrlDecode( Request.QueryString["q"] ) ;
+    string searchTerm;
+    searchTerm = "%" + Request["q"] + "%";
+
+    var db = Database.Open("GoodStarter");
+    var matchingNeeds = db.Query("SELECT * FROM Need JOIN UserProfile ON UserProfile.UserID=Need.CreatorID WHERE Need.NeedTitle LIKE @0 OR Need.Description LIKE @0 OR UserProfile.FirstName Like @0 OR UserProfile.LastName LIKE @0", searchTerm);
+    
+}
+
+<div class="row">
+    <h2 class="page-title">Search Results</h2>
+
+    @if(matchingNeeds != null ) {
+        foreach( var need in matchingNeeds) {
+        <div class="col-sm-4 popular-need">
+            <div class="popular-container">
+                <a href="/need/@need.NeedID">
+                    <img class="img-responsive popular-img" src="~/Images/@need.ImageName" alt="popular-need">
+                    <h3> @need.NeedTitle</h3>
+                    <p> @need.FirstName @need.LastName </p>
+                    <p> @need.Description </p>
+                </a>
+            </div>
+        </div>  
+        }
+    }
+            
+        
+</div>
+
+<hr>
+
+<div class="row">
+    <section class="social col-md-12">
+        <h2>Tell others about GoodStarter!</h2>
+        <p>Discover and fulfill needs with friends!</p>
+        <a class="social-button" href="#"><span id="facebook"><i class="fa fa-fw fa-facebook"></i></span> Connect with Facebook</a>
+    </section>
+</div>
+<div class="row">
+    <section class="learn-more col-md-12">
+        <h2>Want to know more?</h2>
+        <p>Each GoodStarter need is an independent creation of someone like you!</p>
+        <a class="learn-button" href="#">Learn More</a>
+    </section>
+</div>
