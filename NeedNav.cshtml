@@ -12,22 +12,22 @@
 }
 
 
-
 <div class="row">
     <h1 class="page-title">@needInfo.NeedTitle</h1>
 </div>
 <div class="row need-nav-row">
     <div class="title-creator-info col-md-4">
         <a href="~/Profile/@userInfo.UserId"><img class="creator-img float-left" src="~/Images/@userInfo.Picture" alt="" /></a>
-        <h3 class="float-left">@userInfo.FirstName @userInfo.LastName</h3>
+        <h3 class="float-left" id="authorName">@userInfo.FirstName @userInfo.LastName</h3>
     </div>
-    <div class="need-nav col-md-offset-2 col-md-6">
+
+    <div class="need-nav col-md-offset-2 col-md-6" id="main-need-nav">
         <ul class="sub-nav-control">
-            <li><a href="~/Need/@id"><i class="fa fa-home"></i> Home</a>
+            <li><a href="~/Need/@id" id="homeNav"><i class="fa fa-home"></i> Home</a>
             </li>
-            <li><a href="~/Comments/@id"><i class="fa fa-pencil-square-o"></i> Comments</a>
+            <li><a href="~/Comments/@id" id="commentsNav"><i class="fa fa-pencil-square-o"></i> Comments</a>
             </li>
-            <li><a href="~/Updates/@id"><i class="fa fa-cloud-upload"></i> Updates</a>
+            <li><a href="~/Updates/@id" id="updatesNav"><i class="fa fa-cloud-upload"></i> Updates</a>
             </li>
         </ul>
     </div>

@@ -639,7 +639,6 @@ img {
     text-decoration: none;
     color: #2C3E50;
     background: #E8F6FF;
-    border-bottom: 2px solid #27AE60;
     transition: 0.2s ease-in-out;
     font-family: Lato, Helvetica, sans-serif;
     font-size: 1.3em;
@@ -649,8 +648,8 @@ img {
 .need-nav ul li a:hover {
     color: white;
     background: #2ecc71;
-    border-bottom: 2px solid #27AE60;
 }
+
 
 .need-nav-row {
     margin-bottom: 20px;
@@ -670,6 +669,7 @@ img {
 }
 
 .meet-need-button {
+    display: block;
     margin-top: 60px;
     border: 1px solid #2eec71;
     text-align: center;
@@ -682,7 +682,10 @@ img {
 }
 
 .meet-need-button:hover {
-    background: #27AE60;
+    color: #2ecc71;
+    background: white;
+    border: 1px solid #27AE60;
+    text-decoration: none;
 }
 
 .meet-need-button:active {
@@ -707,6 +710,16 @@ img {
     height: 100%;
 }
 
+#needSummary{
+    padding: 15px;
+    border-top: 1px solid #27AE60;
+    border-radius:  15px;
+}
+
+#summaryH2{
+    text-align: center;
+}
+
 /* -------------------------- END NEED CSS -------------------------- */
 
 /* -------------------------- START SHARE CSS -------------------------- */
@@ -728,6 +741,7 @@ img {
     border: 1px solid #E2E2E2;
     border-top:  2px solid #2ecc71;
     border-radius: 10px;
+    border-top-right-radius: 0px;
 }
 #stats{
     list-style: none;
@@ -744,4 +758,21 @@ img {
     border-radius: 96px;
     width: 96px;
     height: 96px;
+}
+
+#needNavigation-home #homeNav,
+#needNavigation-comments #commentsNav,
+#needNavigation-updates #updatesNav{
+    color: white;
+    background: #27AE60;
+}
+
+#authorName{
+    display: block;
+    padding-top: 20px;
+}
+
+#main-need-nav{
+    position: relative;
+    top: 41px;
 }

@@ -15,6 +15,7 @@
     var updatePosts = db.Query("SELECT * FROM Updates WHERE NeedID = @0 ORDER BY PostDate DESC", id);
 }
 
+<div id="needNavigation-updates">
 @RenderPage("NeedNav.cshtml")
 
 <section class="description">
@@ -35,11 +36,12 @@
         </div>
         <div class="col-md-4">
             <div class="need-stats">
-                <h4><span class="stat-num">2</span> Need Meeters</h4>
+                <h4><span class="stat-num">2</span> Good Starters</h4>
                 <h4><span class="stat-num">9</span> Days to Go</h4>
                 <h4><span class="stat-num">14</span> Watching</h4>
-                <div class="meet-need-button">Meet Need</div>
+                <a href="~/Comments/@id" class="meet-need-button">Meet Need</a>
             </div>
         </div>
     </div>
 </section>
+</div>
