@@ -105,7 +105,7 @@ body {
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #27AE60;f
+    background-color: #27AE60;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: white;
@@ -647,7 +647,7 @@ img {
 
 .need-nav ul li a:hover {
     color: white;
-    background: #2ecc71;
+    background: #27AE60;
 }
 
 
@@ -764,7 +764,9 @@ img {
 #needNavigation-comments #commentsNav,
 #needNavigation-updates #updatesNav{
     color: white;
-    background: #27AE60;
+    background: #2ecc71;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #authorName{
