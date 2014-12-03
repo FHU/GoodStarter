@@ -17,7 +17,7 @@
 <div id="needNavigation-comments">
 @RenderPage("NeedNav.cshtml")
 
-<section class="description">
+<section class="description" >
     <div class="row">
         <div class="col-md-8">
             @foreach(var comment in comments)
@@ -31,7 +31,7 @@
                         <a href="~/Profile/@comment.UserId"><div class="commenterName float-left">@comment.FirstName @comment.LastName</div> </a>
                     </div>
                 </div>
-                <a href="~/Profile/@comment.UserId"><img class="comment-img float-left" src="~/Images/@comment.Picture" alt="" /></a>
+                <a href="~/Profile/@comment.UserId"><img class="comment-img float-left" src="~/Images/@comment.Picture" alt="user image" /></a>
                 <p>@comment.Text</p>
                 <div class="commenter-name row">
                 </div>
@@ -48,6 +48,6 @@
             </div>
         </div>
     </div>
-    </div>
 </section>
+
 </div>

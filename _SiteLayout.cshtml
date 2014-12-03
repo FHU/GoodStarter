@@ -30,6 +30,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap3-typeahead.min.js" ></script>
     <script src="~/Scripts/app.js"></script>
 </head>
 
@@ -55,7 +56,21 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/Account/Register">Sign Up <i class="fa fa-chevron-circle-down"></i></a></li>
+                        <!-- <a href="/Account/Register">Sign Up <i class="fa fa-chevron-circle-down"></i></a>  -->
+                        @if (WebSecurity.IsAuthenticated) {
+                        <text>
+                            <li><a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a></li>
+                            <li> 
+                                <form id="logoutForm" action="~/Account/Logout" method="post">
+                                    @AntiForgery.GetHtml()
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a> 
+                                </form>
+                            </li>
+                        </text>
+                        } else {
+                            <li><a href="~/Account/Register">Sign Up <i class="fa fa-chevron-circle-down"></i></a></li>
+                            <li><a href="~/Account/Login">Log in</a></li>
+                        }
                     </ul>
                     <form class="navbar-form navbar-right" role="search" action="/search" method="get">
                         <div class="form-group">

@@ -12,6 +12,12 @@
     var email = "";
     var password = "";
     var confirmPassword = "";
+    var firstName = "";
+    var lastName ="";
+    var hometown = "";
+    var homestate = "";
+    var education = "";
+    var userInfo = "";
 
     // Setup validation
     Validation.RequireField("email", "You must specify an email address.");
@@ -23,6 +29,15 @@
             maxLength: Int32.MaxValue,
             minLength: 6,
             errorMessage: "Password must be at least 6 characters"));
+    Validation.RequireField("firstName", "Enter your first name.");
+    Validation.RequireField("lastName", "Enter your last name.");
+    Validation.RequireField("hometown", "Enter your hometown.");
+    Validation.RequireField("homestate", "Enter your state.");
+    Validation.RequireField("userInfo", "Enter a short bio.");
+    Validation.Add("userInfo", Validator.StringLength(
+            maxLength: 200,
+            minLength: 1,
+            errorMessage: "Bio must be < 200 characters.") );
 
     // If this is a POST request, validate and process data
     if (IsPost) {
@@ -30,6 +45,13 @@
         email = Request.Form["email"];
         password = Request.Form["password"];
         confirmPassword = Request.Form["confirmPassword"];
+        firstName = Request.Form["firstName"];
+        lastName = Request.Form["lastName"];
+        hometown = Request.Form["hometown"];
+        homestate = Request.Form["homestate"];
+        education = Request.Form["education"];
+        userInfo = Request.Form["userInfo"];
+        
 
         // Validate the user's captcha answer
         // if (!ReCaptcha.Validate("PRIVATE_KEY")) {
@@ -45,7 +67,7 @@
             var user = db.QuerySingle("SELECT Email FROM UserProfile WHERE LOWER(Email) = LOWER(@0)", email);
             if (user == null) {
                 // Insert email into the profile table
-                db.Execute("INSERT INTO UserProfile (Email) VALUES (@0)", email);
+                db.Execute("INSERT INTO UserProfile (Email, FirstName, LastName, Hometown, Homestate, Education, UserInfo) VALUES (@0, @1, @2, @3, @4, @5, @6)", email, firstName, lastName, hometown, homestate, education, userInfo);
 
                 // Create and associate a new entry in the membership database.
                 // If successful, continue processing the request
@@ -109,11 +131,57 @@
                 @Html.ValidationMessage("password")
             </div>
             <div class="form-group confirm-password">
-                <label for="confirmPassword" @if(!ModelState.IsValidField("confirmPassword")) {<text>class="error-label"</text>}><span class="glyphicon glyphicon-lock"></span> Confirm password</label>
+                <label for="confirmPassword" @if(!ModelState.IsValidField("confirmPassword")) {<text>class="error-label"</text>}><span class="glyphicon glyphicon-lock"></span> Confirm Password</label>
                 <input type="password" id="confirmPassword" name="confirmPassword"class="form-control" @Validation.For("confirmPassword") />
                 @* Write any password validation errors to the page *@
                 @Html.ValidationMessage("confirmPassword")
             </div>
+            <div class="form-group name row">
+                <div class="col-md-6">
+                    <label for="firstName" @if(!ModelState.IsValidField("firstName")) {<text>class="error-label"</text>}><span class="glyphicon glyphicon-user"></span> First Name</label>
+                    <input type="text" id="firstName" name="firstName"class="form-control" @Validation.For("firstName") />
+                    @* Write any password validation errors to the page *@
+                    @Html.ValidationMessage("firstName")
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" @if(!ModelState.IsValidField("lastName")) {<text>class="error-label"</text>}><span class="glyphicon glyphicon-user"></span> Last Name</label>
+                    <input type="text" id="lastName" name="lastName"class="form-control" @Validation.For("lastName") />
+                    @* Write any password validation errors to the page *@
+                    @Html.ValidationMessage("lastName")
+                </div>
+
+            </div>
+
+            <div class="form-group hometown-state row">
+                <div class="col-md-6">
+                    <label for="hometown" @if(!ModelState.IsValidField("hometown")) {<text>class="error-label"</text>}><span class="glyphicon glyphicon-home"></span> Hometown</label>
+                    <input type="text" id="hometown" name="hometown"class="form-control" @Validation.For("hometown") />
+                    @* Write any password validation errors to the page *@
+                    @Html.ValidationMessage("hometown")
+                </div>
+                <div class="col-md-6">
+                    <label for="homestate" @if(!ModelState.IsValidField("homestate")) {<text>class="error-label"</text>}><span class="glyphicon glyphicon-globe"></span> State </label>
+                    <input type="text" id="homestate" name="homestate"class="form-control" data-provide="typeahead" @Validation.For("homestate") autocomplete="off"/>
+                    @* Write any password validation errors to the page *@
+                    @Html.ValidationMessage("homestate")
+                </div>
+
+            </div>
+
+            <div class="form-group education">
+                <label for="education" @if(!ModelState.IsValidField("education")){<text>class="error-label"</text>}><span class="glyphicon glyphicon-education"></span> Education </label>
+                <input type="text" id="education" name="education" class="form-control" value="@email" @Validation.For("education") />
+                @* Write any email validation errors to the page *@
+                @Html.ValidationMessage("education")
+            </div>
+
+            <div class="form-group user-info">
+                <label for="userInfo" @if(!ModelState.IsValidField("userInfo")) {<text>class="error-label"</text>}><span class="glyphicon glyphicon-book"></span> Bio</label>
+                <textarea id="userInfo" name="userInfo"class="form-control" @Validation.For("userInfo") > </textarea>
+                @* Write any password validation errors to the page *@
+                @Html.ValidationMessage("userInfo")
+            </div>
+
             <!--<li class="recaptcha">
                 <div class="message-info">
                     <p>
