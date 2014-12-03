@@ -695,6 +695,22 @@ img {
     border: 1px solid #27AE60;
 }
 
+
+/*table code*/
+.table-img{
+     border: 1px solid #2ecc71;
+    margin-right: 20px;
+    border-radius: 96px;
+    width: 45px;
+    height: 45px;
+}
+
+td{
+   font-size: 22px; 
+}
+
+
+
 .video {
     position: relative;
     width: 85%;

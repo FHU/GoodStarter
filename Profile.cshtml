@@ -9,8 +9,12 @@
     }
 
     var db = Database.Open("GoodStarter");
-    var needInfo = db.Query("SELECT * FROM Need WHERE CreatorID = @0", id);
-    var userInfo = db.QuerySingle("SELECT * FROM userProfile WHERE userId = @0", id);  
+    var needInfo = db.Query("SELECT * FROM Need JOIN userProfile ON need.creatorID=userProfile.userID WHERE CreatorID = @0", id);
+    var userInfo = db.QuerySingle("SELECT * FROM userProfile WHERE userId = @0", id);
+    var needWatching = db.Query("SELECT * FROM Watching JOIN Need ON Need.NeedID=Watching.NeedID JOIN userProfile ON need.creatorID=userProfile.userID WHERE WatcherID = @0", id);
+<!---------------------------->    
+     
+
 }
 
 <section class="description">
@@ -27,39 +31,71 @@
             
         </div>
         <div class="col-md-5">
-            <h4 style="padding-top: 18px; "><b>About me: </b> @Html.Raw(userInfo.userInfo)</h4>
+            <h4 style="padding-top: 18px; "><b>About me: </b> @userInfo.userInfo</h4>
         </div>
     </div>
     </div>
-    <div class="row">
-        @foreach(var need in needInfo) {
-        <div class="col-md-10 need-stats" style="text-align: center; margin-bottom: 20px;">
-                    <img class="img-responsive popular-img" src="~/Images/@need.ImageName" alt="popular-need">
-                    <h3>@need.NeedTitle</h3>
-                    <p> @userInfo.FirstName @userInfo.LastName </p>
-                    <p> @need.Description </p>
-                    <h4><span class="stat-num">9</span>:Days to Go<span class="stat-num">14</span>:Watching</h4>
-                    <a class="profile-need" href="~/Need/@need.NeedID">
-                        <div class="meet-need-button">View Need</div>
-                    </a>
-        </div>  
-        }
-        <div class="col-md-5">
-            <h3>Needs that @userInfo.FirstName is watching:</h3>
-        </div>
+  
 
-        @foreach(var need in needInfo) {
-        <div class="col-md-10 need-stats" style="text-align: center; margin-bottom: 20px; background: #FFFFCC;">
-                    <img class="img-responsive popular-img" src="~/Images/@need.ImageName" alt="popular-need">
-                    <h3>Need being watched</h3>
-                    <p> @userInfo.FirstName @userInfo.LastName </p>
-                    <p> @need.Description </p>
-                    <h4><span class="stat-num">9</span>:Days to Go<span class="stat-num">14</span>:Watching</h4>
-                    <a class="profile-need" href="~/Need/@need.NeedID">
-                        <div class="meet-need-button">View Need</div>
-                    </a>
-        </div>  
+
+        <div class="row">
+            <div class="col-md-10">
+                <h3>My Needs</h3>
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Creator</th>
+            <th>Title</th>
+            <th>Deadline</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach(var need in needInfo){ 
+           <a href="/need/@need.NeedID"> 
+              <tr>
+                <td><img class="table-img float-left" src="~/Images/@userInfo.Picture" alt="user-img"/>@need.FirstName 
+                    @need.LastName</td>
+                <td>@need.needTitle</td>
+                <td>@need.deadlineDate.ToString("d")</td>
+              </tr>
+            </a>
         }
+          
+        </tbody>
+      </table>
+
+<h3>Needs @userInfo.FirstName is watching</h3>
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Creator</th>
+            <th>Title</th>
+            <th>Deadline</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach(var need in needWatching){ 
+            <a href="/need/@need.NeedID">
+              <tr>
+                <td><img class="table-img float-left" src="~/Images/@need.Picture" alt="user-img"/>@need.FirstName 
+                    @need.LastName</td>
+                <td>@need.needTitle</td>
+                <td>@need.deadlineDate.ToString("d")</td>
+              </tr>
+            </a>
+        }
+      </tbody>
+      </table>  
+
+
+
+
+    </div>
+ </div>
+
+
+
+
 
 
     </div>
