@@ -20,6 +20,7 @@
 <section class="description" >
     <div class="row">
         <div class="col-md-8">
+
             @foreach(var comment in comments)
             {
             <div class="user-comments">
@@ -37,8 +38,8 @@
                 </div>
             </div>
             }
-            <div class="comments">
-                <a href="~/PostComment/@needID" class=" "> Post a new comment </a>
+            <div class="user-comments">
+                <a href="~/PostComment/@needID"> Post a new comment </a>
             </div>
 
         </div>
