@@ -10,7 +10,7 @@
     
     
    var db = Database.Open("GoodStarter");
-   var comments = db.Query("SELECT * FROM Comment JOIN UserProfile ON comment.UserID = UserProfile.UserID WHERE NeedID = @0 ORDER BY PostDate DESC", id);
+   var comments = db.Query("SELECT * FROM Comment JOIN UserProfile ON comment.UserID = UserProfile.UserID WHERE NeedID = @0", id);
    
 }
 
@@ -22,7 +22,7 @@
         <div class="col-md-8">
             @foreach(var comment in comments)
             {
-            <div class="user-comment">
+            <div class="user-comments">
                 <div class="post-date row sub-title">
                     <div class="float-right">
                         @Helpers.GetPrettyDate(comment.PostDate)
@@ -37,6 +37,9 @@
                 </div>
             </div>
             }
+            <div class="comments">
+                <a href="~/PostComment/@needID" class=" "> Post a new comment </a>
+            </div>
 
         </div>
         <div class="col-md-4">
