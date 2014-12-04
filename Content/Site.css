@@ -761,30 +761,7 @@ img {
 }
 
 
-/*table code*/
-.table-img{
-     border: 1px solid #2ecc71;
-    margin-right: 20px;
-    border-radius: 12px;
-    width: 45px;
-    height: 45px;
-}
 
-td{
-   font-size: 22px; 
-}
-
-.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color: #d9d9de;
-}
-
-/* Color Scheme 
-    Important Green    #27ae60  << medium cool    >>
-    Background Clouds  #ecf0f1  << light  neutral >>
-    Bright Green       #2ecc71  << light   cool   >>
-    Writing Blues      #2c3e50  << light   cool   >>
-    Subtle Borders     #d9d9de  << dark    cool   >>
-*/
 
 .video {
     position: relative;
@@ -844,8 +821,8 @@ td{
     border: 1px solid #2ecc71;
     margin-right: 20px;
     border-radius: 12px;
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    
 }
 
 #needNavigation-home #homeNav,
@@ -865,4 +842,49 @@ td{
 #main-need-nav{
     position: relative;
     top: 41px;
+}
+
+/*table code*/
+.table-img{
+     border: 1px solid #2ecc71;
+    margin-right: 20px;
+    border-radius: 12px;
+    width: 45px;
+    height: 45px;
+}
+
+td{
+   font-size: 20px; 
+   font-family: "Lato", sans-serif;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #c3ffad;
+}
+
+td a{
+    text-decoration: none;
+    color:  black;
+}
+td a:hover{
+    text-decoration: none;
+    color: #777;
+}
+
+/* Color Scheme 
+    Important Green    #27ae60  << medium cool    >>
+    Background Clouds  #ecf0f1  << light  neutral >>
+    Bright Green       #2ecc71  << light   cool   >>
+    Writing Blues      #2c3e50  << light   cool   >>
+    Subtle Borders     #d9d9de  << dark    cool   >>
+    rgba(46,204,113, .3)
+    rgba(39,174,96, .3)
+*/
+
+h4 .fa{
+    font-size: 20px;
+}
+
+h3 .fa{
+    font-size: 20px;
 }

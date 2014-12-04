@@ -14,34 +14,31 @@
     var needWatching = db.Query("SELECT * FROM Watching JOIN Need ON Need.NeedID=Watching.NeedID JOIN userProfile ON need.creatorID=userProfile.userID WHERE WatcherID = @0", id);
 <!---------------------------->    
      
-
-
+    
+   
 
 }
 
 <section class="description">
-    <div class="container">
     <div class="row">
     <div class="title-creator-info">
-        <div class="col-md-2">
+        <div class="col-md-3">
             <img class="creator-img float-left" src="~/Images/@userInfo.Picture" alt="user-img"/>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-9">
             <h1>@userInfo.FirstName @userInfo.LastName</h1>
-            <h3>@userInfo.education</h3> 
-            <h3>@userInfo.HomeTown, <b>@userInfo.HomeState</b></h3>
-            
+            <h3><i class="fa fa-graduation-cap"></i> @userInfo.education</h3> 
+            <h3><i class="fa fa-home"></i> @userInfo.HomeTown, <b>@userInfo.HomeState</b></h3>
+            <p>@userInfo.userInfo</p>
         </div>
-        <div class="col-md-5">
-            <h4 style="padding-top: 18px; "><b>About me: </b> @userInfo.userInfo</h4>
-        </div>
+        
     </div>
     </div>
   
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <h3>My Needs</h3>
         <table class="table table-striped">
         <thead>
@@ -53,11 +50,12 @@
         </thead>
         <tbody>
         @foreach(var need in needInfo){ 
-              <tr>
-                <td><img class="table-img float-left" src="~/Images/@userInfo.Picture" alt="user-img">@need.FirstName 
-                    @need.LastName</td>
-                <td>@need.needTitle</td>
-                <td>@need.deadlineDate.ToString("d")</td>
+              
+            <tr>
+                <td><a href="/need/@need.NeedID"><img class="table-img float-left" src="~/Images/@userInfo.Picture" alt="user-img">@need.FirstName 
+                    @need.LastName</a></td>
+                <td><a href="/need/@need.NeedID">@need.needTitle</a></td>
+                <td><a href="/need/@need.NeedID">@need.deadlineDate.ToString("MMM dd, yyyy")</a></td>
               </tr>
         }  
         </tbody>
@@ -75,17 +73,16 @@
         <tbody>
         @foreach(var need in needWatching){ 
               <tr>
-                <td><img class="table-img float-left" src="~/Images/@need.Picture" alt="user-img"/>@need.FirstName 
-                    @need.LastName</td>
-                <td>@need.needTitle</td>
-                <td>@need.deadlineDate.ToString("d")</td>
+                <td><a href="/need/@need.NeedID"><img class="table-img float-left" src="~/Images/@need.Picture" alt="user-img"/>@need.FirstName 
+                    @need.LastName</a></td>
+                <td><a href="/need/@need.NeedID">@need.needTitle</a></td>
+                <td><a href="/need/@need.NeedID">@need.deadlineDate.ToString("MMM dd, yyyy")</a></td>
               </tr>  
         }
       </tbody>
       </table>   
     </div>
  </div>
-</div>
 </div>
 </div>
 </section>
