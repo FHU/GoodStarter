@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
     /* Function to stretch navbar at screen top */
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         console.log($(document).scrollTop());
         if ($(document).scrollTop() > 0) {
             $(".navbar-brand").css("font-size", "18px");
@@ -23,7 +23,10 @@ $(document).ready(function() {
         }
     });
 
-    $("#homestate").typeahead({ source:states });
+    $("#homestate").typeahead({ source: states });
+    $("#postUpdate").click( function () {
+        $("#formFields").slideToggle()
+    });
 });
 
 
