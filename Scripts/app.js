@@ -24,8 +24,10 @@ $(document).ready(function () {
     });
 
     $("#homestate").typeahead({ source: states });
+
+    $("#updateForm").hide();
     $("#postUpdate").click( function () {
-        $("#formFields").slideToggle()
+        $("#updateForm").slideToggle()
     });
 });
 

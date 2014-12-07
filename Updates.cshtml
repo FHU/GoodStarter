@@ -44,16 +44,16 @@
                     <div class="linkFillsDiv">
                         <a href="#" onclick="return false" id="postUpdate"> Post a new update </a>
                     </div>
-                    <form method="post" id="formFields" style="display: none">
+                    <form method="post" id="updateForm">
                         <div class="form-update-title row">
                             <label for="UpdateTitle">Title</label> @Html.ValidationMessage("UpdateTitle")<br />
                             <h2>
-                                <input type="text" name="UpdateTitle" value="@Request.Form["UpdateTitle"]" />
+                                <input class="title-field form-control" type="text" name="UpdateTitle" maxlength="100" value="@Request.Form["UpdateTitle"]" required/>
                             </h2>
                         </div>
                         <div class="form-text row">
                             <label for="UpdateText">Text</label> @Html.ValidationMessage("UpdateText")<br />
-                            <textarea name="UpdateText" placeholder="Enter your update here!" cols="75" rows="5">@Request.Unvalidated.Form["UpdateText"]</textarea>
+                            <textarea class="content-field form-control" name="UpdateText" placeholder="Enter your update here!" rows="5" required>@Request.Unvalidated.Form["UpdateText"]</textarea>
                         </div>
                         <div class="row">
                             <input type="submit" value="Submit" class="submit-button float-right"/>
