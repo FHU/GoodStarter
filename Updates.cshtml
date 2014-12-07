@@ -41,9 +41,11 @@
         <div class="col-md-8">
             @if (creatorIsLoggedIn) {
                 <div class="updates">
-                    <a href="#" onclick="return false" id="postUpdate"> Post a new update </a>
+                    <div class="linkFillsDiv">
+                        <a href="#" onclick="return false" id="postUpdate"> Post a new update </a>
+                    </div>
                     <form method="post" id="formFields" style="display: none">
-                        <div class="update-title row">
+                        <div class="form-update-title row">
                             <label for="UpdateTitle">Title</label> @Html.ValidationMessage("UpdateTitle")<br />
                             <h2>
                                 <input type="text" name="UpdateTitle" value="@Request.Form["UpdateTitle"]" />
