@@ -852,10 +852,15 @@ img {
     height: 100%;
 }
 
+#summaryH2{
+    padding-left:  15px;
+}
+
 #needSummary{
     padding: 15px;
     border-top: 1px solid #27AE60;
     border-radius:  15px;
+    font-size: 18px;
 }
 
 /* -------------------------- END NEED CSS -------------------------- */
