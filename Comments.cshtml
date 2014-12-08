@@ -17,7 +17,6 @@
     var userInfo = db.QuerySingle("SELECT * FROM UserProfile WHERE UserId = @0", needInfo.CreatorID);;
     var comments = db.Query("SELECT * FROM Comment JOIN UserProfile ON comment.UserID = UserProfile.UserID WHERE NeedID = @0", id);
 
-    var UserIsLoggedIn = WebSecurity.CurrentUserId == userInfo.UserId;
 
     if (IsPost) {
         if (Validation.IsValid())   {
@@ -38,14 +37,14 @@
 <section class="description" >
     <div class="row">
         <div class="col-md-8">
-            @if (UserIsLoggedIn) {
+            @if (WebSecurity.IsAuthenticated) {
                 <div class="user-comments">
                     <div class="linkFillsDiv">
                         <a href="#" onclick="return false" id="postComment"> Post a new comment </a>
                     </div>
                     <form method="post" id="commentForm">
                         <div class="form-text row">
-                            <label for="CommentText">Text</label> @Html.ValidationMessage("CommentText")<br />
+                            <label for="CommentText"></label> @Html.ValidationMessage("CommentText")<br />
                             <textarea class="content-field form-control" name="CommentText" placeholder="Enter your comment here!" rows="5" required>@Request.Unvalidated.Form["CommentText"]</textarea>
                         </div>
                         <div class="row">

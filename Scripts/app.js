@@ -29,6 +29,11 @@ $(document).ready(function () {
     $("#postUpdate").click( function () {
         $("#updateForm").slideToggle()
     });
+
+    $("#commentForm").hide();
+    $("#postComment").click( function () {
+        $("#commentForm").slideToggle()
+    });
 });
 
 
