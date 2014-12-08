@@ -29,7 +29,7 @@
             <h1>@userInfo.FirstName @userInfo.LastName</h1>
             <h3><i class="fa fa-graduation-cap"></i> @userInfo.education</h3> 
             <h3><i class="fa fa-home"></i> @userInfo.HomeTown, <b>@userInfo.HomeState</b></h3>
-            <p>@userInfo.userInfo</p>
+            <p><i class="fa fa-comment-o"></i> @userInfo.userInfo</p>
         </div>
         
     </div>
@@ -52,7 +52,7 @@
         @foreach(var need in needInfo){ 
               
             <tr>
-                <td><a href="/need/@need.NeedID"><img class="table-img float-left" src="~/Images/@userInfo.Picture" alt="user-img">@need.FirstName 
+                <td><a href="/profile/@need.creatorID"><img class="table-img float-left" src="~/Images/@userInfo.Picture" alt="user-img">@need.FirstName 
                     @need.LastName</a></td>
                 <td><a href="/need/@need.NeedID">@need.needTitle</a></td>
                 <td><a href="/need/@need.NeedID">@need.deadlineDate.ToString("MMM dd, yyyy")</a></td>
@@ -73,7 +73,7 @@
         <tbody>
         @foreach(var need in needWatching){ 
               <tr>
-                <td><a href="/need/@need.NeedID"><img class="table-img float-left" src="~/Images/@need.Picture" alt="user-img"/>@need.FirstName 
+                <td><a href="/profile/@need.creatorID"><img class="table-img float-left" src="~/Images/@need.Picture" alt="user-img"/>@need.FirstName 
                     @need.LastName</a></td>
                 <td><a href="/need/@need.NeedID">@need.needTitle</a></td>
                 <td><a href="/need/@need.NeedID">@need.deadlineDate.ToString("MMM dd, yyyy")</a></td>
