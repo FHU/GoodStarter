@@ -453,7 +453,7 @@ img {
     border-bottom-right-radius: 0;
 }
 
-.popular-container h3 {
+.popular-container h3, .popular-container h4 {
     padding: 0 20px 0 20px;
     text-align: center;
 }
@@ -470,9 +470,11 @@ img {
 
 .small-creator-img{
     border: 1px solid #2ecc71;
-    margin-left: 20px;
+    display:block;
+    /*margin-left: 20px;*/
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    max-width: 60px;
 }
 
 .popular-container a {
@@ -824,7 +826,7 @@ img {
     background: #2ecc71;
     transition: 0.2s ease-in-out;
     color: white;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 10px; 
     text-decoration: none;
 }
@@ -846,28 +848,29 @@ img {
 .watch-need-button {
     display: block;
     margin-top: 20px;
-    border: 1px solid #2eec71;
+    border: 1px solid #438cb4;
     text-align: center;
     font-size: 1.5em;
     background: white;
     transition: 0.2s ease-in-out;
-    color: #2eec71;
-    border-radius: 2px;
+    color: #438cb4;
+    border-radius: 5px;
     padding: 10px; 
     text-decoration: none;
 }
 
 .watch-need-button:hover {
     color: white;
-    background: #27AE60;
-    border: 1px solid #27AE60;
+    background: #438cb4;
+    border: 1px solid #438cb4;
     text-decoration: none;
 }
 
 .watch-need-button:active {
     color: white;
-    background: #27AE60;
+    background: #438cb4;
     border: 1px solid white;
+    text-decoration: none;
 }
 
 
