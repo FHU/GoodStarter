@@ -36,53 +36,57 @@
 <div id="needNavigation-updates">
 @RenderPage("NeedNav.cshtml")
 
-<section class="description">
-    <div class="row">
-        <div class="col-md-8">
-            @if (creatorIsLoggedIn) {
-                <div class="updates">
-                    <div class="linkFillsDiv">
-                        <a href="#" onclick="return false" id="postUpdate"> Post a new update </a>
+    <section class="description">
+        <div class="row">
+            <div class="col-md-8">
+                @if (creatorIsLoggedIn)
+                {
+                    <div class="updates">
+                        <div class="linkFillsDiv">
+                            <a href="#" onclick="return false" id="postUpdate"> Post a new update </a>
+                        </div>
+                        <form method="post" id="updateForm">
+                            <div class="form-update-title row">
+                                <label for="UpdateTitle">Title</label> @Html.ValidationMessage("UpdateTitle")<br />
+                                <h2>
+                                    <input class="title-field form-control" type="text" name="UpdateTitle" maxlength="100" value="@Request.Form["UpdateTitle"]" required />
+                                </h2>
+                            </div>
+                            <div class="form-text row">
+                                <label for="UpdateText">Text</label> @Html.ValidationMessage("UpdateText")<br />
+                                <textarea class="content-field form-control" name="UpdateText" placeholder="Enter your update here!" rows="5" required>@Request.Unvalidated("UpdateText")</textarea>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="Submit" class="submit-button float-right" />
+                            </div>
+                        </form>
                     </div>
-                    <form method="post" id="updateForm">
-                        <div class="form-update-title row">
-                            <label for="UpdateTitle">Title</label> @Html.ValidationMessage("UpdateTitle")<br />
-                            <h2>
-                                <input class="title-field form-control" type="text" name="UpdateTitle" maxlength="100" value="@Request.Form["UpdateTitle"]" required/>
-                            </h2>
+                }
+                @foreach (var update in updatePosts)
+                {
+                    <div class="updates">
+                        <div class="update-top row">
+                            <div class="update-date row">
+                                <p class="float-right"> @Helpers.GetPrettyDate(update.PostDate) </p>
+                            </div>
+                            <div class="update-title row">
+                                <h2 class="float-left"> @update.Title </h2>
+                            </div>
                         </div>
-                        <div class="form-text row">
-                            <label for="UpdateText">Text</label> @Html.ValidationMessage("UpdateText")<br />
-                            <textarea class="content-field form-control" name="UpdateText" placeholder="Enter your update here!" rows="5" required>@Request.Unvalidated.Form["UpdateText"]</textarea>
-                        </div>
-                        <div class="row">
-                            <input type="submit" value="Submit" class="submit-button float-right"/>
-                        </div>
-                    </form>
-                </div>
-            }
-            @foreach (var update in updatePosts) {
-                <div class="updates">
-                    <div class="update-top row">
-                        <div class="update-date row">
-                            <p class="float-right"> @Helpers.GetPrettyDate(update.PostDate) </p>
-                        </div>
-                        <div class="update-title row">
-                            <h2 class="float-left"> @update.Title </h2>
-                        </div>
+                        <p class="update-text"> @update.Text </p>
                     </div>
-                    <p class="update-text"> @update.Text </p>
+                }
+            </div>
+            <div class="col-md-4">
+                <div class="need-stats">
+                    <h4><span class="stat-num">2</span> GoodStarters</h4>
+                    <h4><span class="stat-num">9</span> Days to Go</h4>
+                    <h4><span class="stat-num">14</span> Watching</h4>
+                    <a href="~/Comments/@id" class="meet-need-button">Meet Need</a>
+                    <a href="javascript:void(0)" class="watch-need-button">Watch Need</a>
+
                 </div>
-            }
-        </div>
-        <div class="col-md-4">
-            <div class="need-stats">
-                <h4><span class="stat-num">2</span> GoodStarters</h4>
-                <h4><span class="stat-num">9</span> Days to Go</h4>
-                <h4><span class="stat-num">14</span> Watching</h4>
-                <a href="~/Comments/@id" class="meet-need-button">Meet Need</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>

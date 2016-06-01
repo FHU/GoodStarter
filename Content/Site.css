@@ -360,10 +360,6 @@ footer p {
     margin-top: 30px;
 }
 
-row {
-    margin-top: 30px;
-}
-
 img {
     max-width:  100%;   
 }
@@ -408,6 +404,7 @@ img {
     background-color: #50B87C;
     border-radius: 5px;
     transition: all 0.4s ease;
+    text-decoration: none;
 }
 
 .learn-button {
@@ -438,33 +435,44 @@ img {
     color: white;
 }
 
-.popular-img {
-    margin: 0 auto;
-    width: 350px;
-    height: 175px;
-    border-radius: 5px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
 .popular-container {
-    height:  500px;
+    height:  450px;
+    overflow: hidden;
     border-radius: 5px;
     border: 1px solid #E2E2E2;
     background: white;
 }
 
-.popular-container h3 {
-    height:  120px;
+.popular-img {
+    margin: 0 auto;
+    max-width: 100%;
+    max-height:200px;
+    
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.popular-container h3,
-.popular-container p {
+.popular-container h3 {
+    padding: 0 20px 0 20px;
+    text-align: center;
+}
+
+.popular-container .needDescription {
+    padding: 10px 40px 20px 40px;
     text-overflow: ellipsis;
-    max-height:  100px;
+    max-height:  200px;
     overflow:  hidden;
     color: #000;
-    padding: 20px;
+    line-height:1.5em;
+    border-top: 1px solid #E2E2E2 /*2ecc71*/;
+}
+
+.small-creator-img{
+    border: 1px solid #2ecc71;
+    margin-left: 20px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .popular-container a {
@@ -818,6 +826,7 @@ img {
     color: white;
     border-radius: 2px;
     padding: 10px; 
+    text-decoration: none;
 }
 
 .meet-need-button:hover {
@@ -833,6 +842,33 @@ img {
     border: 1px solid #27AE60;
 }
 
+
+.watch-need-button {
+    display: block;
+    margin-top: 20px;
+    border: 1px solid #2eec71;
+    text-align: center;
+    font-size: 1.5em;
+    background: white;
+    transition: 0.2s ease-in-out;
+    color: #2eec71;
+    border-radius: 2px;
+    padding: 10px; 
+    text-decoration: none;
+}
+
+.watch-need-button:hover {
+    color: white;
+    background: #27AE60;
+    border: 1px solid #27AE60;
+    text-decoration: none;
+}
+
+.watch-need-button:active {
+    color: white;
+    background: #27AE60;
+    border: 1px solid white;
+}
 
 
 
@@ -898,10 +934,9 @@ img {
 .creator-img{
     border: 1px solid #2ecc71;
     margin-left: 10px;
-    border-radius: 150px;
-    width: 150px;
-    height: 150px;
-    
+    border-radius: 100px;
+    width: 100px;
+    height: 100px; 
 }
 
 #needNavigation-home #homeNav,

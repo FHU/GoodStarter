@@ -19,29 +19,36 @@
         <!--<a class="social-button" href="#"> Explore Needs </a> -->
 
     </div>
-    <div class="col-sm-4" >
-        <img class="img-responsive leaf-img" src="~/Images/light_leaf_portrait.jpg" alt="leaf" /> 
+    <div class="col-sm-4">
+        <img class="img-responsive leaf-img" src="~/Images/light_leaf_portrait.jpg" alt="leaf" />
     </div>
-            
+
 </div>
 
 <div class="row">
-        <h2 class="page-title">Trending Needs</h2>
+    <h2 class="page-title">Trending Needs</h2>
 
-        @foreach( var need in mostPopularNeeds) {
+    @foreach (var need in mostPopularNeeds)
+    {
         <div class="col-sm-4 popular-need">
             <div class="popular-container">
                 <a href="/need/@need.NeedID">
                     <img class="img-responsive popular-img" src="~/Images/@need.ImageName" alt="popular-need">
                     <h3> @need.NeedTitle</h3>
-                    <p> @need.FirstName @need.LastName </p>
-                    <p> @need.Description </p>
+                    <div class="row">
+                        <div class="col-sm-3"><img class="small-creator-img" src="~/Images/@need.Picture" alt="#" /></div>
+                        <h4 class="col-sm-9"> @need.FirstName @need.LastName </h4>
+                    </div>
+                    <div class="row">
+                        <p class="needDescription col-md-12"> @need.Description </p>
+                    </div>
+
                 </a>
             </div>
-        </div>  
-        }
-            
-        
+        </div>
+    }
+
+
 </div>
 
 <hr>

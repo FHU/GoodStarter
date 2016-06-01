@@ -45,7 +45,7 @@
                     <form method="post" id="commentForm">
                         <div class="form-text row">
                             <label for="CommentText"></label> @Html.ValidationMessage("CommentText")<br />
-                            <textarea class="content-field form-control" name="CommentText" placeholder="Enter your comment here!" rows="5" required>@Request.Unvalidated.Form["CommentText"]</textarea>
+                            <textarea class="content-field form-control" name="CommentText" placeholder="Enter your comment here!" rows="5" required>@Request.Unvalidated("CommentText")</textarea>
                         </div>
                         <div class="row">
                             <input type="submit" value="Submit" class="submit-button float-right"/>
@@ -78,6 +78,7 @@
                 <h4><span class="stat-num">9</span> Days to Go</h4>
                 <h4><span class="stat-num">14</span> Watching</h4>
                 <a href="~/Comments/@id" class="meet-need-button">Meet Need</a>
+                <a href="javascript:void(0)" class="watch-need-button">Watch Need</a>
             </div>
         </div>
     </div>
