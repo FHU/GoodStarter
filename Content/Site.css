@@ -54,18 +54,25 @@ body {
     color: #333;
 }
 /* link */
-.navbar-default .navbar-nav > li > a{
+.navbar-default .navbar-nav > li  a{
     color: white;
     line-height: 50px;
     transition: 0.2s ease-in-out;
+}
+
+.navbar-default li a {
+    position:relative;
+    display:block;
+    padding: 15px 15px;
+    text-decoration:none;
 }
 
 .navbar-form {
     line-height: 60px;
     transition: 0.2s ease-in-out;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li a:hover,
+.navbar-default .navbar-nav > li a:focus {
     color: #333;
     background: white;
 }

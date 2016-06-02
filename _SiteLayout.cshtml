@@ -59,11 +59,11 @@
                         <!-- <a href="/Account/Register">Sign Up <i class="fa fa-chevron-circle-down"></i></a>  -->
                         @if (WebSecurity.IsAuthenticated) {
                         <text>
-                            <li><a class="email" href="~/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a></li>
+                            <li><a class="email" href="~/Account/Manage" title="Manage"><i class="fa fa-user" aria-hidden="true"></i> <!--@WebSecurity.CurrentUserName--></a></li>
                             <li> 
-                                <form id="logoutForm" action="~/Account/Logout" method="post">
+                                <form id="logoutForm" action="~/Account/Logout" method="post" title="Log Out">
                                     @AntiForgery.GetHtml()
-                                    <a href="javascript:document.getElementById('logoutForm').submit()">Log out</a> 
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a> 
                                 </form>
                             </li>
                         </text>

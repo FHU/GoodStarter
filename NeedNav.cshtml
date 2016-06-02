@@ -9,6 +9,8 @@
     var needInfo = db.QuerySingle("SELECT CreatorID, NeedTitle FROM Need WHERE NeedID = @0", id);
     var userInfo = db.QuerySingle("SELECT * FROM UserProfile WHERE UserId = @0", needInfo.CreatorID);
     var updatePosts = db.Query("SELECT * FROM Updates WHERE NeedID = @0 ORDER BY PostDate DESC", id);
+    var commentCount = db.QuerySingle("SELECT COUNT(*) AS Count FROM Comment WHERE NeedID = @0", id);
+
 }
 
 
@@ -25,7 +27,7 @@
         <ul class="sub-nav-control">
             <li><a href="~/Need/@id" id="homeNav"><i class="fa fa-home"></i> Home</a>
             </li>
-            <li><a href="~/Comments/@id" id="commentsNav"><i class="fa fa-pencil-square-o"></i> Comments</a>
+            <li><a href="~/Comments/@id" id="commentsNav"><i class="fa fa-pencil-square-o"></i> Comments (@commentCount.Count)</a>
             </li>
             <li><a href="~/Updates/@id" id="updatesNav"><i class="fa fa-cloud-upload"></i> Updates</a>
             </li>
