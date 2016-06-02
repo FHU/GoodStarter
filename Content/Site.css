@@ -439,7 +439,7 @@ img {
     height:  450px;
     overflow: hidden;
     border-radius: 5px;
-    border: 1px solid #E2E2E2;
+    border: 2px solid #E2E2E2;
     background: white;
 }
 
@@ -460,7 +460,6 @@ img {
 
 .popular-container .needDescription {
     padding: 10px 40px 20px 40px;
-    text-overflow: ellipsis;
     max-height:  200px;
     overflow:  hidden;
     color: #000;
