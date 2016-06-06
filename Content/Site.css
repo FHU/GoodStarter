@@ -879,12 +879,10 @@ img {
     text-decoration: none;
 }
 
-
-
 .video {
     position: relative;
-    width: 85%;
-    height: 0;
+    width: 100%;
+    height: auto;
     padding-bottom: 50%;
     margin-bottom: 40px;
 }

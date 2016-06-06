@@ -4,24 +4,22 @@
 
     var db = Database.Open("GoodStarter");
     var mostPopularNeeds = db.Query("SELECT * FROM Need JOIN (SELECT NeedID, COUNT(NeedID) CT FROM Watching GROUP BY NeedID) AS NeedCounts ON NeedCounts.NeedID=Need.NeedID JOIN UserProfile ON UserProfile.UserID=Need.CreatorID ORDER BY NeedCounts.CT DESC");
-
 }
 
 <div class="row jumbotron">
 
-    <div class="col-sm-8">
+    <div class="col-sm-12">
         <div class="slogan-title">
             <h1>Start Something Good.</h1>
             <h2>Our aim is to connect people together in order to spark good.</h2>
-            <h3>We believe that sharing needs in community will bring out the best in people.</h3>
+            <h4>We believe that sharing needs in community will bring out the best in people.</h4>
         </div>
-        <a class="meet-need-button" href="/account/register"> <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up </a>
+        <a class="meet-need-button col-sm-4" href="/account/register"> <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up </a>
         <!--<a class="social-button" href="#"> Explore Needs </a> -->
-
     </div>
-    <div class="col-sm-4">
+    <!--<div class="col-sm-4">
         <img class="img-responsive leaf-img" src="~/Images/light_leaf_portrait.jpg" alt="leaf" />
-    </div>
+    </div>-->
 
 </div>
 
